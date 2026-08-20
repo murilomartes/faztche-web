@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FazTchê — Criar conta</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="screen">
+
+    <header style="display: flex; align-items: center; padding: 20px; gap: 12px;">
+      <a href="index.html" style="text-decoration: none; color: var(--color-text); font-size: 20px;">←</a>
+      <h1 style="font-size: 18px; font-weight: 600;">Criar conta</h1>
+    </header>
+
+    <main style="padding: 0 20px 20px; flex: 1;">
+      <p style="color: var(--color-text-muted); margin-bottom: 16px; font-size: 14px;">
+        Como você deseja usar o FazTchê?
+      </p>
+
+      <label class="card" style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px; cursor: pointer;">
+        <input type="radio" name="tipo-conta" value="cliente" checked />
+        <div>
+          <strong style="font-size: 14px;">Cliente</strong>
+          <p style="font-size: 12px; color: var(--color-text-muted);">Encontre serviços, comércio e ofertas.</p>
+        </div>
+      </label>
+
+      <label class="card" style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px; cursor: pointer;">
+        <input type="radio" name="tipo-conta" value="profissional" />
+        <div>
+          <strong style="font-size: 14px;">Profissional</strong>
+          <p style="font-size: 12px; color: var(--color-text-muted);">Ofereça seus serviços e conquiste clientes.</p>
+        </div>
+      </label>
+
+      <label class="card" style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px; cursor: pointer;">
+        <input type="radio" name="tipo-conta" value="empresa" />
+        <div>
+          <strong style="font-size: 14px;">Empresa</strong>
+          <p style="font-size: 12px; color: var(--color-text-muted);">Divulgue sua empresa e aumente as vendas.</p>
+        </div>
+      </label>
+
+      <form>
+        <input class="field" type="text" placeholder="Nome" required />
+        <input class="field" type="email" placeholder="E-mail" required />
+        <input class="field" type="password" placeholder="Senha" required />
+
+        <label style="display: flex; align-items: flex-start; gap: 8px; font-size: 12px; color: var(--color-text-muted); margin-bottom: 20px;">
+          <input type="checkbox" required style="margin-top: 2px;" />
+          Li e aceito os Termos de Uso e a Política de Privacidade.
+        </label>
+
+        <button type="submit" class="btn btn-primary">Criar conta</button>
+      </form>
+    </main>
+
+  </div>
+</body>
+</html>
