@@ -11,7 +11,7 @@
 /* ===== Design tokens ===== */
 :root {
   --color-bg: #ffffff;
-  --color-dark: #0e2a2e;
+  --color-dark: #0e2a2e;  
   --color-dark-2: #123a3d;
   --color-primary: #17998c;
   --color-primary-dark: #0f6e64;
@@ -25,7 +25,7 @@
   --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.08);
 
   --font-base: 'Poppins', system-ui, sans-serif;
-  --max-width: 420px; /* simula a largura de um celular */
+  --max-width: 500px; /* simula a largura de um celular */
 }
 
 body {
@@ -141,4 +141,51 @@ body {
   justify-content: center;
   font-size: 20px;
   margin-top: -20px;
+}
+
+/* ===== Tela inicial ===== */
+
+.welcome-screen {
+  background-image: url("../assets/background_teste.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: #fff;
+  justify-content: space-between;
+}
+
+.welcome-header {
+  padding: 60px 32px 0;
+  text-align: center;
+}
+
+.welcome-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.welcome-header p {
+  margin-top: 10px;
+  font-size: 50px;
+  color:white;
+  font-weight: bolder;
+}
+
+.welcome-header img {
+  width: 250px;
+}
+
+.welcome-actions {
+  padding: 32px;
+  margin-bottom: 70px;
+}
+
+.welcome-actions .btn-primary {
+  margin-bottom: 20px;
+}
+
+.btn-light {
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #fff;
 }
