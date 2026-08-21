@@ -293,7 +293,8 @@ body {
 
 .signup-photo {
   position: relative;
-  height: 220px;
+  /* Em vez de 220px fixos, usa uma porcentagem da altura da tela */
+  height: clamp(160px, 25vh, 240px);
   flex-shrink: 0;
   background-image: url("../assets/imagem_criarconta.jpg");
   background-size: cover;
@@ -313,23 +314,26 @@ body {
 }
 
 .signup-content {
-  /* Zera o padding superior para encostar a área de conteúdo na curva */
-  padding: 0 24px 24px; 
+  padding: 0 24px clamp(16px, 3vh, 32px);
   flex: 1;
   display: flex;
   flex-direction: column;
+  /* Distribui o conteúdo uniformemente se a tela for maior */
+  justify-content: space-between; 
 }
 
 .signup-logo {
   display: flex;
   align-items: center;
   gap: 5px;
-  margin-top: -25px; 
+  /* Puxa o logo para cima proporcionalmente */
+  margin-top: calc(-0.8 * clamp(15px, 2.5vh, 25px)); 
 }
 
 .signup-logo img,
 .signup-logo svg {
-  width: 150px;
+  /* O logo reduz em telas menores para não empurrar o resto */
+  width: clamp(110px, 25vw, 150px);
   flex-shrink: 0;
 }
 
@@ -352,30 +356,24 @@ body {
 }
 
 .signup-content .field {
-  margin-bottom: 14px;
+  padding: clamp(10px, 1.8vh, 14px) 16px;
+  margin-bottom: clamp(8px, 1.5vh, 14px);
 }
 
 .signup-content .btn {
-  margin-top: 6px;
+  padding: clamp(10px, 1.8vh, 14px) 20px;
 }
 
 .social-login {
   display: flex;
   gap: 14px;
-  margin-top: 20px;
+  margin-top: clamp(10px, 2vh, 20px);
 }
 
 .social-btn {
   flex: 1;
-  height: 52px;
+  height: clamp(42px, 6vh, 52px);
   border-radius: 14px;
-  border: 1.5px solid var(--color-border);
-  background: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: filter 0.2s;
 }
 
 .social-btn:hover {
