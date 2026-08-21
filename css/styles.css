@@ -293,7 +293,7 @@ body {
 
 .signup-photo {
   position: relative;
-  height: 240px;
+  height: 220px;
   flex-shrink: 0;
   background-image: url("../assets/imagem_criarconta.jpg");
   background-size: cover;
@@ -308,12 +308,13 @@ body {
   right: 0;
   bottom: -1px;
   width: 100%;
-  height: 56px;
+  height: 50px;
   display: block;
 }
 
 .signup-content {
-  padding: 8px 24px 24px;
+  /* Zera o padding superior para encostar a área de conteúdo na curva */
+  padding: 0 24px 24px; 
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -322,13 +323,13 @@ body {
 .signup-logo {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin: 4px 0 10px;
+  gap: 5px;
+  margin-top: -25px; 
 }
 
 .signup-logo img,
 .signup-logo svg {
-  width: 80px;
+  width: 150px;
   flex-shrink: 0;
 }
 
