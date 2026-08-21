@@ -11,7 +11,7 @@
 /* ===== Design tokens ===== */
 :root {
   --color-bg: #ffffff;
-  --color-dark: #0e2a2e;  
+  --color-dark: #0e2a2e;
   --color-dark-2: #123a3d;
   --color-primary: #17998c;
   --color-primary-dark: #0f6e64;
@@ -166,7 +166,7 @@ body {
 .welcome-header p {
   margin-top: 10px;
   /* Reduz de 50px fixos para um tamanho que se adapta à tela */
-  font-size: clamp(24px, 6vw, 36px); 
+  font-size: clamp(24px, 6vw, 36px);
   color: white;
   font-weight: 700;
   line-height: 1.2;
@@ -283,3 +283,115 @@ body {
   margin-top: 2px;
 }
 
+/* =========================================
+   CADASTRO (Página 3 do mockup) — novo
+   Reaproveita os tokens e classes acima
+   (.screen, .field, .btn, .account-content).
+   Só foi necessário acrescentar o cabeçalho
+   com foto/curva e a linha de login social.
+========================================= */
+
+.signup-photo {
+  position: relative;
+  height: 240px;
+  flex-shrink: 0;
+  background-image: url("../assets/imagem_criarconta.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* curva branca que separa a foto do restante da tela */
+.signup-photo .curve {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 56px;
+  display: block;
+}
+
+.signup-content {
+  padding: 8px 24px 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 4px 0 10px;
+}
+
+.signup-logo img,
+.signup-logo svg {
+  width: 80px;
+  flex-shrink: 0;
+}
+
+.signup-logo span {
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+.signup-logo span strong {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.signup-content .account-subtitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-dark);
+  margin-bottom: 18px;
+}
+
+.signup-content .field {
+  margin-bottom: 14px;
+}
+
+.signup-content .btn {
+  margin-top: 6px;
+}
+
+.social-login {
+  display: flex;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.social-btn {
+  flex: 1;
+  height: 52px;
+  border-radius: 14px;
+  border: 1.5px solid var(--color-border);
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: filter 0.2s;
+}
+
+.social-btn:hover {
+  filter: brightness(0.97);
+}
+
+.social-btn svg {
+  width: 22px;
+  height: 22px;
+}
+
+.social-btn.instagram {
+  background: linear-gradient(135deg, #f9ce34 0%, #ee2a7b 50%, #6228d7 100%);
+  border: none;
+}
+
+.social-btn.x {
+  background: #111111;
+  border: none;
+}
