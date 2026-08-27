@@ -1,0 +1,39 @@
+/* Divisória "Ou continue com" */
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0 16px;
+  color: var(--color-text-muted, #8e8e93);
+  font-size: 13px;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid var(--color-border, #e0e0e0);
+}
+
+.divider span {
+  padding: 0 12px;
+}
+
+/* Divisória do Rodapé (Link para Cadastro) */
+.divider-footer {
+  text-align: center;
+  margin-top: auto;
+  padding-top: 16px;
+  font-size: 14px;
+  color: var(--color-text-muted, #666);
+}
+
+.divider-footer a {
+  color: var(--color-primary);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.divider-footer a:hover {
+  text-decoration: underline;
+}

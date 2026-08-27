@@ -1,0 +1,436 @@
+/* =========================================
+   PÁGINA — Buscar (search.css)
+========================================= */
+
+.search-screen {
+  background-color: #f7f9fa;
+  padding-bottom: 80px;
+}
+
+.search-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 20px;
+  background: #ffffff;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.search-header h1 {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-dark, #0b2b3c);
+}
+
+/* Linha superior do header: título à esquerda, logo centralizada, ações à direita
+   (mesmo padrão visual do header da Início) */
+.header-top {
+  position: relative; /* referência para a logo centralizada em .brand-logo */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.search-title h1 {
+  margin: 0;
+}
+
+/* Logo "FazTchê" centralizada sobre o header */
+.brand-logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  user-select: none;
+}
+
+.brand-logo:active {
+  opacity: 0.7;
+  transform: translateX(-50%) scale(0.96);
+}
+
+.brand-faz { color: #0b2b3c; }
+.brand-tche { color: #0d9488; }
+
+/* Ações à direita: notificações e avatar */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.profile-avatar-btn {
+  display: block;
+  padding: 0;
+  background: none;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.profile-avatar-btn:hover {
+  border-color: #0d9488;
+}
+
+.profile-avatar-btn img {
+  display: block;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Input de Busca */
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-input-wrapper input {
+  width: 100%;
+  padding: 12px 40px 12px 16px;
+  background: #f1f3f5;
+  border: 1px solid transparent;
+  border-radius: 24px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.search-input-wrapper input:focus {
+  background: #fff;
+  border-color: var(--color-dark, #0b2b3c);
+}
+
+.search-input-wrapper .search-icon {
+  position: absolute;
+  right: 14px;
+  pointer-events: none;
+}
+
+/* Scroll dos Filtros */
+.filters-scroll {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  margin-top: 12px;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+}
+
+.filter-chip {
+  background: #fff;
+  border: 1px solid #dcdfe3;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #4a5568;
+  white-space: nowrap;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.filter-chip[data-active="true"] {
+  background: var(--color-dark, #0b2b3c);
+  color: #fff;
+  border-color: var(--color-dark, #0b2b3c);
+}
+
+.select-chip select {
+  border: none;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 600;
+  color: inherit;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Lista de Resultados */
+.results-container {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 200px;
+}
+
+.business-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  padding: 12px;
+  border-radius: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+}
+
+.business-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.business-info {
+  flex: 1;
+}
+
+.business-info h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-dark, #0b2b3c);
+}
+
+.business-info .category {
+  font-size: 12px;
+  color: #718096;
+  margin-top: 2px;
+}
+
+.business-info .distance {
+  font-size: 12px;
+  font-weight: 600;
+  color: #2d3748;
+  margin-top: 4px;
+}
+
+.business-info .status {
+  font-size: 11px;
+  font-weight: 700;
+  color: #22c55e; /* verde: "Aberto agora" / "Disponível agora" */
+  margin-top: 2px;
+}
+
+/* Estabelecimento fechado — mesma classe .status, com cor cinza no lugar do verde */
+.business-info .status.closed {
+  color: #94a3b8;
+}
+
+.business-rating {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-dark, #0b2b3c);
+  align-self: flex-start;
+}
+
+.no-results {
+  text-align: center;
+  color: #718096;
+  padding: 40px 0;
+  font-size: 14px;
+}
+
+/* =========================================
+   DRAWER LATERAL DE PERFIL E SEGURANÇA
+   -----------------------------------------
+   Mesmo bloco usado no home.css — painel deslizando
+   da direita, com cartão de usuário + lista de
+   configurações.
+========================================= */
+
+/* Fundo escurecido atrás do drawer */
+.profile-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 43, 60, 0.45);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease;
+  z-index: 1100;
+}
+
+.profile-drawer-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Painel lateral que desliza da direita */
+.profile-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 85%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  box-shadow: -8px 0 24px rgba(0, 0, 0, 0.12);
+  transform: translateX(100%);
+  transition: transform 0.28s ease;
+  z-index: 1200;
+}
+
+.profile-drawer.active {
+  transform: translateX(0);
+}
+
+.profile-drawer-scroll {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Cabeçalho do drawer */
+.drawer-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px 16px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.drawer-header-bar h2 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 800;
+  color: #0b2b3c;
+}
+
+.close-drawer-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: #f1f5f9;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.close-drawer-btn:hover {
+  background: #e2e8f0;
+}
+
+/* Cartão com informações básicas do usuário */
+.user-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 24px 20px;
+  text-align: center;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.user-avatar-container {
+  width: 84px;
+  height: 84px;
+}
+
+.user-avatar-lg {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #e6f4f1;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.user-details h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 800;
+  color: #0b2b3c;
+}
+
+.user-email {
+  font-size: 12.5px;
+  color: #64748b;
+}
+
+.verified-pill {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 4px;
+  padding: 3px 10px;
+  background: #e6f4f1;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #0d9488;
+}
+
+/* Lista de configurações do perfil */
+.settings-menu {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 20px 24px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid #f1f5f9;
+  color: #0b2b3c;
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-item:active {
+  opacity: 0.6;
+}
+
+.item-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.item-left svg {
+  flex-shrink: 0;
+  color: #0d9488;
+}
+
+.item-left span {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.menu-item .chevron {
+  flex-shrink: 0;
+}

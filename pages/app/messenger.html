@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FazTchê - Orçamentos e Mensagens</title>
+  
+  <link rel="stylesheet" href="../../css/base/reset.css">
+  <link rel="stylesheet" href="../../css/base/tokens.css">
+  <link rel="stylesheet" href="../../css/layouts/screen.css">
+  <link rel="stylesheet" href="../../css/components/bottom-nav.css">
+  <link rel="stylesheet" href="../../css/pages/messages.css">
+</head>
+<body>
+
+  <div class="screen messages-screen">
+    
+    <!-- HEADER -->
+    <header class="messages-header">
+      <div class="header-main">
+        <a href="inicio.html" class="back-btn" aria-label="Voltar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2.5">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+        </a>
+        <h1>Orçamentos e mensagens</h1>
+        <button class="new-chat-btn" aria-label="Nova Mensagem">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2">
+            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- FILTROS DE STATUS DE ORÇAMENTO -->
+      <div class="filter-tabs">
+        <button class="status-tab active" data-status="todos">Todos</button>
+        <button class="status-tab" data-status="enviado">Enviado</button>
+        <button class="status-tab" data-status="respondido">Respondido</button>
+        <button class="status-tab" data-status="aceito">Aceito</button>
+      </div>
+    </header>
+
+    <main class="messages-content">
+      
+      <!-- LISTA DE CONVERSAS -->
+      <div class="chat-list" id="chat-list-container">
+        <!-- Injetado dinamicamente via JS -->
+      </div>
+
+      <!-- CARD DICA DE SEGURANÇA -->
+      <div class="security-card">
+        <div class="security-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00a896" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </div>
+        <div class="security-text">
+          <h4>Dica de segurança</h4>
+          <p>Converse sempre dentro do FazTchê e desconfie de pagamentos antecipados.</p>
+        </div>
+        <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2">
+          <path d="M9 18l6-6-6-6"/>
+        </svg>
+      </div>
+
+    </main>
+
+    <!-- BOTTOM NAV -->
+    <nav class="bottom-nav">
+      <a href="inicio.html" class="nav-item">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+        <span>Início</span>
+      </a>
+      <a href="buscar.html" class="nav-item">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <span>Buscar</span>
+      </a>
+      <a href="publicar.html" class="nav-item publish-btn">
+        <div class="plus-circle">+</div>
+        <span>Publicar</span>
+      </a>
+      <a href="explorar.html" class="nav-item">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M16.24 7.76l-2.12 6.36-6.36 2.12 2.12-6.36z"/></svg>
+        <span>Explorar</span>
+      </a>
+      <a href="../profile/perfil.html" class="nav-item">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span>Perfil</span>
+      </a>
+    </nav>
+
+  </div>
+
+  <script src="../../js/messages.js"></script>
+</body>
+</html>

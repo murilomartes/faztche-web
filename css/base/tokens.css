@@ -1,0 +1,47 @@
+/* =========================================
+   TOKENS
+   Fonte, cores, raios e sombras usados em
+   todo o projeto. Nenhuma regra de layout
+   ou de tela específica deve entrar aqui —
+   só variáveis e a fonte.
+========================================= */
+
+/* Poppins via Google Fonts — troque se descobrir a fonte exata da marca */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/*
+  ===== Breakpoints (mobile-first) =====
+  Todo CSS deste projeto é escrito mobile-first: as regras SEM @media
+  são a base e valem para MOBILE. Cada @media (min-width) liga estilos
+  extras a partir daquele tamanho — nunca o contrário.
+
+  CSS puro não tem @custom-media sem um pós-processador (ex: PostCSS),
+  então usamos estes valores como referência fixa em todo o projeto:
+
+    mobile   -> base, sem @media           0    – 639px
+    tablet   -> @media (min-width: 640px)  640  – 1023px
+    desktop  -> @media (min-width: 1024px) 1024px+
+
+  Ao adicionar uma tela nova, comece só com a versão mobile (sem
+  @media) e adicione @media (min-width: 640px)/(min-width: 1024px)
+  apenas se o layout realmente precisar mudar em telas maiores.
+*/
+
+:root {
+  --color-bg: #ffffff;
+  --color-dark: #0e2a2e;
+  --color-dark-2: #123a3d;
+  --color-primary: #17998c;
+  --color-primary-dark: #0f6e64;
+  --color-accent: #f2994a;
+  --color-text: #1a1a1a;
+  --color-text-muted: #6b7280;
+  --color-border: #e5e7eb;
+
+  --radius-pill: 999px;
+  --radius-card: 16px;
+  --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+  --font-base: 'Poppins', system-ui, sans-serif;
+  --max-width: 500px; /* largura da "moldura" de celular a partir do breakpoint tablet */
+}

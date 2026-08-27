@@ -1,0 +1,48 @@
+/* =========================================
+   PÁGINA — Tela inicial (welcome)
+   Usada por index.html / inicio.html.
+========================================= */
+
+.welcome-screen {
+  background-image: url("../../assets/images/background_welcome.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  min-height: 100dvh;
+}
+
+.welcome-header {
+  padding: clamp(20px, 8vh, 40px) 24px 0;
+  text-align: center;
+}
+
+.welcome-header p {
+  margin-top: 10px;
+  font-size: clamp(24px, 6vw, 36px);
+  color: white;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.welcome-header img {
+  max-width: 350px;
+  width: 50%;
+  height: auto;
+  margin-top: 15px;
+}
+
+.welcome-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Define o espaçamento correto entre os botões */
+  padding: 20px 24px clamp(24px, 5vh, 40px);
+  margin-bottom: 0;
+}
+.welcome-actions .btn-primary {
+  margin-bottom: 12px;
+}

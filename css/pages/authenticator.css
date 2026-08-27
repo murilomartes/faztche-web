@@ -1,0 +1,119 @@
+/* =========================================
+   ESTRUTURA COMPARTILHADA — Autenticação
+========================================= */
+
+/* Hero Topo (Foto + Imagem de Fundo) */
+.auth-hero {
+  position: relative;
+  width: 100%;
+  height: clamp(160px, 26vh, 250px);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  flex-shrink: 0;
+}
+
+/* Backgrounds específicos via classe auxiliar */
+.auth-hero.bg-login {
+  background-image: url("../../assets/images/background_login.png");
+}
+
+.auth-hero.bg-signup {
+  background-image: url("../../assets/images/background_criar_conta.jpg");
+}
+
+/* Curva fluida na parte inferior da foto */
+.auth-hero .curve {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  width: 100%;
+  height: clamp(30px, 5vh, 56px);
+  display: block;
+}
+
+/* Conteúdo Principal / Form */
+.auth-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 24px clamp(16px, 3vh, 32px);
+  flex: 1;
+}
+
+/* Logotipo Sobreposto */
+.auth-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  margin-top: calc(-0.8 * clamp(15px, 2.5vh, 25px));
+  position: relative;
+  z-index: 2;
+}
+
+.auth-logo img,
+.auth-logo svg {
+  width: clamp(110px, 25vw, 150px);
+  height: auto;
+  flex-shrink: 0;
+  display: block;
+}
+
+.auth-logo span {
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+.auth-logo span strong {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+/* Títulos */
+.auth-subtitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-dark);
+  margin-top: 12px;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+/* Formulário e Campos */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1.5vh, 12px);
+}
+
+.auth-form .field {
+  padding: clamp(10px, 1.8vh, 14px) 16px;
+}
+
+.auth-form .btn {
+  padding: clamp(10px, 1.8vh, 14px) 20px;
+}
+
+/* Links adicionais (Esqueci a senha, etc) */
+.forgot-password {
+  text-align: right;
+  margin-top: -4px;
+  margin-bottom: 4px;
+}
+
+.forgot-password a {
+  font-size: 13px;
+  color: var(--color-text-muted, #666);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+  color: var(--color-primary);
+}

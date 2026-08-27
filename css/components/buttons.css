@@ -1,0 +1,63 @@
+/* =========================================
+   COMPONENTE — Botões
+
+   .btn é a base; combine sempre com uma
+   variante (.btn-primary, .btn-dark, ...).
+========================================= */
+
+/* Configurações de Botão */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 14px 20px;
+  border-radius: var(--radius-pill);
+  border: none;
+  font-family: var(--font-base);
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  text-decoration: none;
+  /* Atualizado: transição suave para transform e box-shadow */
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Substitua o .btn:hover antigo por este conjunto */
+.btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+.btn:active {
+  transform: translateY(0);
+  filter: brightness(0.95);
+}
+
+/* Variantes */
+.btn-primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+.btn-dark {
+  background: var(--color-dark);
+  color: #fff;
+}
+.btn-accent {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+/* Outline */
+.btn-outline {
+  background: transparent;
+  color: var(--color-text);
+  border: 1.5px solid var(--color-border);
+}
+
+/* Outline para fundos escuros */
+.btn-outline.btn-light {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+

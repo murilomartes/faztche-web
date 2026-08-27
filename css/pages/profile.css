@@ -1,0 +1,208 @@
+/* =========================================
+   PÁGINA — Perfil Profissional (profile.css)
+========================================= */
+
+.profile-screen {
+  background-color: #ffffff;
+  padding-bottom: 24px;
+}
+
+/* Header & Banner */
+.profile-header {
+  position: relative;
+  width: 100%;
+  height: 180px;
+}
+
+.cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.header-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, transparent 60%);
+}
+
+.nav-btn {
+  position: absolute;
+  top: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.back-btn { left: 16px; }
+.share-btn { right: 16px; }
+
+/* Corpo do Perfil */
+.profile-body {
+  position: relative;
+  padding: 0 20px;
+}
+
+/* Avatar e Badge */
+.avatar-wrapper {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin-top: -40px;
+  margin-bottom: 12px;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #0b2b3c;
+  border: 3px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.avatar span {
+  color: #fff;
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+.verified-badge {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 22px;
+  height: 22px;
+  background-color: #0284c7;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Informações */
+.profile-info {
+  margin-bottom: 20px;
+}
+
+.title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.title-row h2 {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0b2b3c;
+}
+
+.badge-text {
+  font-size: 12px;
+  font-weight: 700;
+  color: #0284c7;
+}
+
+.meta-info {
+  font-size: 12px;
+  color: #64748b;
+  margin-bottom: 8px;
+}
+
+.status-open {
+  color: #0d9488;
+  font-weight: 600;
+}
+
+.rating-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.rating-score {
+  font-size: 14px;
+  font-weight: 800;
+  color: #d97706;
+}
+
+.rating-count {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.description {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #334155;
+}
+
+/* Galeria Grid */
+.gallery-section {
+  margin-bottom: 24px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 85px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Ações */
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: opacity 0.2s;
+}
+
+.btn-primary {
+  background-color: #0d9488;
+  color: #ffffff;
+  border: none;
+}
+
+.btn-outline-whatsapp {
+  background-color: #ffffff;
+  color: #0b2b3c;
+  border: 1.5px solid #0b2b3c;
+}
+
+.btn:active {
+  opacity: 0.85;
+}

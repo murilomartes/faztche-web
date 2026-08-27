@@ -1,0 +1,76 @@
+/* =========================================
+   PÁGINA — Tela de Login (account.css)
+   Usada por conta.html
+========================================= */
+
+.account-photo {
+  position: relative;
+  width: 100%;
+  height: clamp(180px, 28vh, 260px);
+  background-image: url("../../assets/images/background_login.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.account-photo .curve {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: clamp(30px, 5vh, 56px);
+}
+
+.account-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 24px clamp(20px, 4vh, 32px);
+  flex: 1;
+}
+
+.account-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: calc(-0.8 * clamp(15px, 2.5vh, 25px));
+}
+
+.account-logo img {
+  width: clamp(110px, 25vw, 150px);
+  height: auto;
+  display: block;
+}
+
+.account-subtitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-dark);
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.account-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.forgot-password {
+  text-align: right;
+  margin-top: -4px;
+  margin-bottom: 8px;
+}
+
+.forgot-password a {
+  font-size: 13px;
+  color: var(--color-text-muted, #666);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+  color: var(--color-primary);
+}
+

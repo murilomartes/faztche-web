@@ -1,0 +1,80 @@
+/* =========================================
+   PÁGINA — Cadastro (criar-conta.html)
+   Reaproveita os componentes .field, .btn e
+   .social-* — aqui ficam só o cabeçalho com
+   foto/curva, o logo e os ajustes locais de
+   espaçamento dessa tela.
+========================================= */
+
+.signup-photo {
+  position: relative;
+  height: clamp(160px, 25vh, 240px); /* porcentagem da altura da tela em vez de valor fixo */
+  flex-shrink: 0;
+  background-image: url("../../assets/images/background_criar_conta.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* curva branca que separa a foto do restante da tela */
+.signup-photo .curve {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 50px;
+  display: block;
+}
+
+.signup-content {
+  padding: 0 24px clamp(16px, 3vh, 32px);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* distribui o conteúdo se a tela for maior */
+}
+
+.signup-logo {
+  display: flex;
+  justify-content: center; /* Centraliza a logo horizontalmente */
+  align-items: center;
+  gap: 5px;
+  margin-top: calc(-0.8 * clamp(15px, 2.5vh, 25px));
+  width: 100%; /* Garante que o container ocupe a largura total */
+}
+
+.signup-logo img,
+.signup-logo svg {
+  width: clamp(110px, 25vw, 150px);
+  flex-shrink: 0;
+}
+
+.signup-logo span {
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+.signup-logo span strong {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.signup-content .account-subtitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-dark);
+  margin-bottom: 18px;
+  align-items: center;
+  text-align: center;
+}
+
+.signup-content .field {
+  padding: clamp(10px, 1.8vh, 14px) 16px;
+  margin-bottom: clamp(8px, 1.5vh, 14px);
+}
+
+.signup-content .btn {
+  padding: clamp(10px, 1.8vh, 14px) 20px;
+}

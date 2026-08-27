@@ -1,0 +1,29 @@
+/* =========================================
+   COMPONENTE — Campos de formulário
+========================================= */
+
+.field {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1.5px solid var(--color-border);
+  border-radius: 10px;
+  font-family: var(--font-base);
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+.field:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.terms {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin-bottom: 20px;
+}
+.terms input {
+  margin-top: 2px;
+}

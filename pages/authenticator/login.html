@@ -1,46 +1,62 @@
+<!-- Tela de Entrar na Conta (pages/authenticator/conta.html) -->
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
-<title>FazTchê - Cadastro</title>
-</head>
-<body>
 
-<!DOCTYPE html>
-<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/styles.css">
-<title>FazTchê - Cadastro</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FazTchê - Entrar</title>
+  
+  <!-- 1 - CSS Base / Reset -->
+  <link rel="stylesheet" href="../../css/base/reset.css">
+  <link rel="stylesheet" href="../../css/base/tokens.css">
+  
+  <!-- 2 - CSS Layout & Responsividade -->
+  <link rel="stylesheet" href="../../css/layouts/screen.css">
+  
+  <!-- 3 - CSS Componentes -->
+  <link rel="stylesheet" href="../../css/components/buttons.css">
+  <link rel="stylesheet" href="../../css/components/forms.css">
+  <link rel="stylesheet" href="../../css/components/social-buttons.css">
+  <link rel="stylesheet" href="../../css/components/divider.css">
+  
+  <!-- 4 - CSS da Página (Estrutura Unificada de Autenticação) -->
+  <link rel="stylesheet" href="../../css/pages/authenticator.css">
 </head>
-<body>
 
+<body>
   <div class="screen">
-    <div class="signup-photo">
+    <!-- Hero / Imagem de fundo do topo (bg-login) -->
+    <div class="auth-hero bg-login">
       <svg class="curve" viewBox="0 0 500 56" preserveAspectRatio="none">
         <path d="M0,56 L0,28 C120,-8 350,46 500,10 L500,56 Z" fill="#ffffff"></path>
       </svg>
     </div>
 
-    <div class="signup-content">
-
-      <div class="signup-logo">
-        <img src="assets/logo.png" alt="">
+    <!-- Conteúdo Principal -->
+    <div class="auth-content">
+      <div class="auth-logo">
+        <img src="../../assets/icons/logo.png" alt="Logo FazTchê">
       </div>
-
-      <p class="account-subtitle">Cadastre sua conta</p>
-
-      <form class="account-form">
+      
+      <p class="auth-subtitle">Acesse sua conta</p>
+      
+      <form class="auth-form">
         <input class="field" type="email" name="email" placeholder="E-mail" required>
         <input class="field" type="password" name="senha" placeholder="Senha" required>
-        <input class="field" type="password" name="confirmar_senha" placeholder="Confirme a Senha" required>
+        
+        <div class="forgot-password">
+          <a href="#">Esqueceu a senha?</a>
+        </div>
 
-        <a href="inicio.html"><button class="btn btn-dark" type="submit">Cadastrar</button></a>
+        <a href="../../pages/app/home.html" class="btn btn-dark">Entrar</a>
       </form>
 
+      <div class="divider">
+        <span>Ou continue com</span>
+      </div>
+
+      <!-- Botões Sociais -->
       <div class="social-login">
         <button type="button" class="social-btn google" aria-label="Entrar com Google">
           <svg viewBox="0 0 24 24">
@@ -66,13 +82,13 @@
         </button>
       </div>
 
+      <div class="divider-footer">
+        <span>Não tem uma conta? <a href="signup.html">Cadastre-se</a></span>
+      </div>
     </div>
-
   </div>
 
-</body>
-</html>
-
-
+  <!-- Caminho relativo do JS corrigido -->
+  <script src="../../js/pages/account.js"></script>
 </body>
 </html>

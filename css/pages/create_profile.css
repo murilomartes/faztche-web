@@ -1,0 +1,280 @@
+/* =========================================
+   1. TELA & HEADER
+========================================= */
+.onboarding-screen {
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+.onboarding-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.onboarding-header h1 {
+  font-size: 16px;
+  font-weight: 800;
+  color: #0b2b3c;
+}
+
+/* Espaçador invisível do lado direito, do mesmo tamanho do botão de voltar,
+   pra manter o título perfeitamente centralizado */
+.header-spacer {
+  width: 36px;
+}
+
+.onboarding-content {
+  padding: 8px 20px 40px;
+}
+
+/* =========================================
+   2. UPLOAD DE FOTO DE PERFIL
+========================================= */
+.photo-upload-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 0 28px;
+}
+
+.photo-upload-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 88px;
+  height: 88px;
+  background: #eef2f4;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background-color 0.2s ease;
+}
+
+.photo-upload-circle:hover {
+  background: #e2e8f0;
+}
+
+.photo-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-upload-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+/* =========================================
+   3. SELETOR DE TIPO DE PERFIL
+========================================= */
+.profile-type-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.profile-type-label {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.profile-type-selector {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.type-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 6px;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  color: #64748b;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.type-option span {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.type-option.active {
+  background: #e6f4f1;
+  border-color: #0d9488;
+  color: #0d9488;
+}
+
+/* =========================================
+   4. FORMULÁRIO
+========================================= */
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Campos escondidos pelo seletor de tipo (ver applyProfileType() no JS) */
+.form-field[hidden],
+.identity-card[hidden] {
+  display: none;
+}
+
+.form-field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-field label {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.form-field input[type="text"],
+.form-field input[type="date"],
+.form-field input[type="tel"] {
+  width: 100%;
+  padding: 12px 14px;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 14px;
+  color: #0b2b3c;
+  outline: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.form-field input:focus {
+  background: #ffffff;
+  border-color: #0d9488;
+}
+
+.input-with-icon,
+.select-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-with-icon input,
+.select-with-icon select {
+  width: 100%;
+  padding: 12px 36px 12px 14px;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 14px;
+  color: #0b2b3c;
+  outline: none;
+  appearance: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.input-with-icon input:focus,
+.select-with-icon select:focus {
+  background: #ffffff;
+  border-color: #0d9488;
+}
+
+.input-with-icon svg,
+.select-chevron {
+  position: absolute;
+  right: 12px;
+  pointer-events: none;
+}
+
+/* =========================================
+   5. CARD "VERIFICAR IDENTIDADE"
+========================================= */
+.identity-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  background: #e6f4f1;
+  border-radius: 14px;
+  text-decoration: none;
+}
+
+.identity-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  background: #0d9488;
+  border-radius: 50%;
+}
+
+.identity-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.identity-text strong {
+  font-size: 13.5px;
+  color: #0b2b3c;
+}
+
+.identity-text span {
+  font-size: 12px;
+  line-height: 1.35;
+  color: #4a6b72;
+}
+
+.identity-card .chevron {
+  flex-shrink: 0;
+}
+
+/* =========================================
+   6. BOTÃO DE CONCLUSÃO
+========================================= */
+.conclude-btn {
+  padding: 15px;
+  background: #0d9488;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.conclude-btn:hover {
+  background: #0b8377;
+}
+
+.conclude-btn:active {
+  transform: scale(0.98);
+}

@@ -1,0 +1,41 @@
+/* =========================================
+   LAYOUT — "screen" (moldura de celular)
+   Único lugar do projeto que decide como a
+   página se comporta em telas maiores que
+   um celular. Mobile-first: a base (sem
+   @media) É o mobile — ocupa a tela real,
+   sem limite de largura.
+========================================= */
+
+body {
+  font-family: var(--font-base);
+  color: var(--color-text);
+  background: #f4f4f4;
+  display: flex;
+  justify-content: center;
+}
+
+/* ----- Mobile (base) ----- */
+.screen {
+  width: 100%;
+  min-height: 100dvh; /* ajuste perfeito em navegadores mobile */
+  background: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden; /* evita vazamentos de rolagem */
+}
+
+/* ----- Tablet e acima -----
+   Em telas maiores que um celular, simula a
+   moldura de um app: largura fixa, centralizada,
+   com cantos arredondados e sombra. */
+@media (min-width: 640px) {
+  .screen {
+    max-width: var(--max-width);
+    margin: 24px auto;
+    min-height: calc(100dvh - 48px);
+    border-radius: 24px;
+    box-shadow: var(--shadow-card);
+  }
+}

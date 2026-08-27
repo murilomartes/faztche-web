@@ -1,0 +1,50 @@
+/* =========================================
+   COMPONENTE — Login social
+========================================= */
+
+.social-login {
+  display: flex;
+  gap: 14px;
+  margin-top: clamp(10px, 2vh, 20px);
+}
+
+.social-btn {
+  flex: 1;
+  height: clamp(42px, 6vh, 52px);
+  border-radius: 14px;
+  border: 1.5px solid var(--color-border);
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  /* Alterado para permitir a animação de transform e box-shadow */
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Efeito Hover nos botões sociais */
+.social-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+/* Efeito Clique nos botões sociais */
+.social-btn:active {
+  transform: translateY(0);
+  filter: brightness(0.95);
+}
+
+.social-btn svg {
+  width: 22px;
+  height: 22px;
+}
+
+.social-btn.instagram {
+  background: linear-gradient(135deg, #f9ce34 0%, #ee2a7b 50%, #6228d7 100%);
+  border: none;
+}
+
+.social-btn.x {
+  background: #111111;
+  border: none;
+}

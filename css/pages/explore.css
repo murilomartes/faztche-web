@@ -1,0 +1,242 @@
+/* =========================================
+   PÁGINA — Explorar (explore.css)
+========================================= */
+
+.explore-screen {
+  background-color: #000;
+  padding-bottom: 60px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Fixo Transparente */
+.explore-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  padding: 16px 20px 8px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+}
+
+.explore-header h1 {
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+/* Chips de Categorias */
+.categories-tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tab-chip {
+  background: rgba(255, 255, 255, 0.85);
+  border: none;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #0b2b3c;
+  white-space: nowrap;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: all 0.2s ease;
+}
+
+.tab-chip.active {
+  background: #0b2b3c;
+  color: #fff;
+}
+
+/* Timeline Feed (Scroll Snap) */
+.explore-feed {
+  flex: 1;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scrollbar-width: none;
+}
+
+.feed-item {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  scroll-snap-align: start;
+  overflow: hidden;
+}
+
+.feed-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.feed-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+/* Info do Autor */
+.author-info {
+  position: absolute;
+  top: 110px;
+  left: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 10;
+}
+
+.author-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid #fff;
+  object-fit: cover;
+}
+
+.author-meta h3 {
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+}
+
+.author-meta span {
+  font-size: 11px;
+  color: #e2e8f0;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+}
+
+/* Botão Ver Mais */
+.see-more-btn {
+  position: absolute;
+  bottom: 24px;
+  left: 16px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 6px 14px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Ações Laterais (Direita) */
+.feed-actions {
+  position: absolute;
+  right: 16px;
+  bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  z-index: 10;
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  cursor: pointer;
+}
+
+.action-btn svg {
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
+
+.action-btn span {
+  font-size: 11px;
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+}
+
+.action-btn.liked {
+  color: #e11d48;
+}
+
+.user-profile-thumb img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  object-fit: cover;
+}
+
+/* =========================================
+   VÍDEO — botão de mudo e indicador de play/pause
+   (só existem em posts do tipo "video")
+========================================= */
+
+/* Botão de mudo/som, canto superior direito de cada vídeo */
+.mute-btn {
+  position: absolute;
+  top: 110px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  z-index: 10;
+}
+
+/* Ícone de play/pause que aparece rapidamente no centro ao tocar no vídeo */
+.play-pause-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 50%;
+  color: #fff;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 15;
+}
+
+.play-pause-indicator.show {
+  opacity: 1;
+}
+
+/* Mensagem para quando uma categoria não tem posts ainda */
+.empty-feed-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0 40px;
+  color: #e2e8f0;
+  font-size: 14px;
+  text-align: center;
+}

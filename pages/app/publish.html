@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FazTchê - Publicar</title>
+  
+  <link rel="stylesheet" href="../../css/base/reset.css">
+  <link rel="stylesheet" href="../../css/base/tokens.css">
+  <link rel="stylesheet" href="../../css/layouts/screen.css">
+  <link rel="stylesheet" href="../../css/components/bottom-nav.css">
+  <link rel="stylesheet" href="../../css/components/buttons.css">
+  <link rel="stylesheet" href="../../css/pages/publish.css">
+</head>
+<body>
+
+  <div class="screen publish-screen">
+    
+    <!-- HEADER COM BOTAO DE VOLTAR -->
+    <header class="publish-header">
+      <a href="inicio.html" class="back-btn" aria-label="Voltar">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2.5">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+      </a>
+      <h1>Publicar</h1>
+    </header>
+
+    <main class="publish-content">
+      <p class="section-title">O que você quer publicar?</p>
+
+      <!-- GRID DE OPÇÕES DE PUBLICAÇÃO -->
+      <div class="options-grid">
+        <button type="button" class="option-card active" data-type="foto">
+          <div class="icon-box green">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          </div>
+          <span>Foto</span>
+        </button>
+
+        <button type="button" class="option-card" data-type="video">
+          <div class="icon-box dark-blue">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+          </div>
+          <span>Vídeo</span>
+        </button>
+
+        <button type="button" class="option-card" data-type="servico">
+          <div class="icon-box dark-blue">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <span>Serviço</span>
+        </button>
+
+        <button type="button" class="option-card" data-type="produto">
+          <div class="icon-box orange">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          </div>
+          <span>Produto</span>
+        </button>
+
+        <button type="button" class="option-card" data-type="promocao">
+          <div class="icon-box teal">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+          </div>
+          <span>Promoção</span>
+        </button>
+
+        <button type="button" class="option-card" data-type="evento">
+          <div class="icon-box dark-blue">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <span>Evento</span>
+        </button>
+      </div>
+
+      <!-- CAMPO DE LOCALIZAÇÃO -->
+      <div class="location-input-group">
+        <label for="location-field">Localização</label>
+        <div class="location-wrapper">
+          <input type="text" id="location-field" value="Canoas, RS" placeholder="Informe sua localização">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        </div>
+      </div>
+
+      <!-- BOTAO DE AÇÃO PRINCIPAL -->
+      <button type="button" id="publish-submit-btn" class="btn btn-orange">Publicar agora</button>
+    </main>
+
+    <!-- =========================================================
+         6. BOTTOM NAV (menu inferior fixo)
+    ========================================================== -->
+    <nav class="bottom-nav">
+      <a href="home.html" class="nav-item">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+        <span>Início</span>
+      </a>
+      <a href="search.html" class="nav-item">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <span>Buscar</span>
+      </a>
+      <a href="publish.html" class="nav-item active publish-btn">
+        <div class="plus-circle">+</div>
+        <span>Publicar</span>
+      </a>
+      <a href="explore.html" class="nav-item">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M16.24 7.76l-2.12 6.36-6.36 2.12 2.12-6.36z"/></svg>
+        <span>Explorar</span>
+      </a>
+      <a href="../profile/profesional.html" class="nav-item">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span>Perfil</span>
+      </a>
+    </nav>
+
+  </div>
+
+  <script src="../../js/publish.js"></script>
+</body>
+</html>

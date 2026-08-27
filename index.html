@@ -1,36 +1,55 @@
+<!-- Tela de boas-vindas index.html/welcome.css
+ ==============================================
+ -> criar-conta.html/signup.css
+ -> conta.html/account.css
+ ==============================================
+-->
+
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FazTchê — Boaas-vindas</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <title>FazTchê — Boas-vindas</title>
+  <!-- 1 - Css Base de Reset -->
+  <link rel="stylesheet" href="css/base/reset.css">
+  <link rel="stylesheet" href="css/base/tokens.css">
+  <!-- 2 - Css Medidas de tela (responsividade)-->
+  <link rel="stylesheet" href="css/layouts/screen.css">
+  <!-- 3 - Css Componentes de Entrada-->
+  <link rel="stylesheet" href="./css/components/buttons.css">
+  <link rel="stylesheet" href="./css/components/forms.css">
+  <link rel="stylesheet" href="./css/components/social-buttons.css">
+  <!-- 4 - Css Configuração de Página-->
+  <link rel="stylesheet" href="css/pages/welcome.css">
 </head>
+
 <body>
-
+  <!-- 1 Div Image -->
   <div class="screen welcome-screen">
-
     <div class="welcome-header">
       <p>
-        Encontre. Conecte,<br>
+        Encontre. <br>
+        Conecte,<br>
         Confie e resolva
       </p>
-            
-      <img src="assets/logo_white.png" alt="logo FazTchê">
-
+      <img src="assets/icons/logo_white.png" alt="logo FazTchê">
     </div>
-
+    
+  <!-- 2 Div Botões -->
     <div class="welcome-actions">
-      <a href="criar-conta.html" class="btn btn-primary">
+      <a href="pages/authenticator/signup.html" class="btn btn-primary">
         Criar conta
       </a>
-
-      <a href="inicio.html" class="btn btn-outline btn-light">
+      <a href="pages/authenticator/login.html" class="btn btn-outline btn-light">
         Entrar
       </a>
     </div>
-
   </div>
 
+  <script src="js/pages/welcome.js"></script>
+
 </body>
+
 </html>
