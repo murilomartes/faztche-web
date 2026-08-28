@@ -1,6 +1,4 @@
-/* =========================================
-   1. TELA & HEADER
-========================================= */
+/* Tela & header */
 .onboarding-screen {
   background-color: #ffffff;
   min-height: 100vh;
@@ -41,9 +39,7 @@
   padding: 8px 20px 40px;
 }
 
-/* =========================================
-   2. UPLOAD DE FOTO DE PERFIL
-========================================= */
+/* Upload de foto de perfil */
 .photo-upload-section {
   display: flex;
   flex-direction: column;
@@ -82,9 +78,7 @@
   color: #64748b;
 }
 
-/* =========================================
-   3. SELETOR DE TIPO DE PERFIL
-========================================= */
+/* Seletor de tipo de perfil */
 .profile-type-section {
   display: flex;
   flex-direction: column;
@@ -129,9 +123,7 @@
   color: #0d9488;
 }
 
-/* =========================================
-   4. FORMULÁRIO
-========================================= */
+/* Formulário */
 .profile-form {
   display: flex;
   flex-direction: column;
@@ -210,9 +202,7 @@
   pointer-events: none;
 }
 
-/* =========================================
-   5. CARD "VERIFICAR IDENTIDADE"
-========================================= */
+/* Card "verificar identidade" */
 .identity-card {
   display: flex;
   align-items: center;
@@ -256,9 +246,7 @@
   flex-shrink: 0;
 }
 
-/* =========================================
-   6. BOTÃO DE CONCLUSÃO
-========================================= */
+/* Botão de conclusão */
 .conclude-btn {
   padding: 15px;
   background: #0d9488;

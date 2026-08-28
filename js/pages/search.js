@@ -1,23 +1,8 @@
-/* =========================================================
-   search.js — Lógica da tela Buscar (FazTchê)
-   -----------------------------------------------------------
-   Organizado por seções:
-     1. Inicialização geral (+ drawer de perfil)
-     2. Dados simulados (mock) dos estabelecimentos
-     3. Renderização dos cards de resultado
-     4. Filtros (texto, categoria, distância, avaliação, status)
-   -----------------------------------------------------------
-   Por enquanto tudo roda em cima do array mockBusinesses, só
-   para já ter a demonstração funcionando como no protótipo.
-   Quando a busca real existir (API/backend), a ideia é trocar
-   applyFilters() para consultar o backend em vez de filtrar
-   o array local — o resto (render, chips, etc.) continua igual.
-   ========================================================= */
+// search.js — lógica da tela Buscar (filtros de texto/categoria/distância/avaliação/status)
+// O drawer de perfil e o bottom-nav vêm de js/components/.
+// Tudo roda em cima do array mockBusinesses por enquanto; quando a busca real existir,
+// a ideia é trocar applyFilters() para consultar o backend em vez do array local.
 
-
-/* =========================================================
-   1. INICIALIZAÇÃO GERAL
-   ========================================================= */
 document.addEventListener('DOMContentLoaded', () => {
   initSearchPage();
 });
@@ -26,49 +11,17 @@ function initSearchPage() {
   const resultsContainer = document.getElementById('results-list');
   if (!resultsContainer) return; // página errada, não faz nada
 
-  // Mostra todos os estabelecimentos assim que a tela carrega
   renderResults(mockBusinesses, resultsContainer);
 
   initSearchInput();
   initToggleChips();
   initCategorySelect();
-  initProfileDrawer();
-}
-
-// Abre/fecha o drawer lateral de perfil e segurança (mesma lógica do home.js)
-function initProfileDrawer() {
-  const openBtn = document.getElementById('open-profile-drawer');
-  const closeBtn = document.getElementById('close-profile-drawer');
-  const drawer = document.getElementById('profile-drawer');
-  const overlay = document.getElementById('profile-overlay');
-
-  if (!drawer || !overlay) return;
-
-  function openProfile() {
-    drawer.classList.add('active');
-    overlay.classList.add('active');
-    document.body.style.overflow = 'hidden'; // evita rolagem da tela de fundo
-  }
-
-  function closeProfile() {
-    drawer.classList.remove('active');
-    overlay.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-
-  if (openBtn) openBtn.addEventListener('click', openProfile);
-  if (closeBtn) closeBtn.addEventListener('click', closeProfile);
-  overlay.addEventListener('click', closeProfile);
 }
 
 
-/* =========================================================
-   2. DADOS SIMULADOS (MOCK) DOS ESTABELECIMENTOS
-   -----------------------------------------------------------
-   status: "aberto" | "disponivel" | "fechado"
-   (os dois primeiros contam como "disponível agora" para o
-   chip de filtro; só "fechado" fica de fora)
-   ========================================================= */
+// Dados simulados dos estabelecimentos.
+// status: "aberto" | "disponivel" | "fechado" (os dois primeiros contam
+// como "disponível agora" para o chip de filtro; só "fechado" fica de fora)
 const mockBusinesses = [
   {
     id: 1,
@@ -127,9 +80,7 @@ const mockBusinesses = [
 ];
 
 
-/* =========================================================
-   3. RENDERIZAÇÃO DOS CARDS DE RESULTADO
-   ========================================================= */
+// Renderização dos cards de resultado
 function renderResults(businesses, container) {
   if (businesses.length === 0) {
     container.innerHTML = `<p class="no-results">Nenhum resultado encontrado para esses filtros.</p>`;
@@ -165,16 +116,9 @@ function formatDistance(distanceKm) {
 }
 
 
-/* =========================================================
-   4. FILTROS
-   -----------------------------------------------------------
-   4.1 Busca por texto (nome do estabelecimento)
-   4.2 Chips de alternância (distância, avaliação, status)
-   4.3 Select de categoria
-   4.4 applyFilters() — combina tudo e re-renderiza a lista
-   ========================================================= */
+// Filtros: texto, chips de alternância, categoria — applyFilters() combina tudo
 
-// 4.1 — Campo de busca por texto: filtra a cada tecla digitada
+// Campo de busca por texto: filtra a cada tecla digitada
 function initSearchInput() {
   const input = document.getElementById('search-input');
   if (!input) return;
@@ -182,7 +126,7 @@ function initSearchInput() {
   input.addEventListener('input', () => applyFilters());
 }
 
-// 4.2 — Chips que alternam entre ativo/inativo (distância, avaliação, disponibilidade)
+// Chips que alternam entre ativo/inativo (distância, avaliação, disponibilidade)
 function initToggleChips() {
   const toggleChips = document.querySelectorAll('.filter-chip[data-active]');
 
@@ -195,7 +139,7 @@ function initToggleChips() {
   });
 }
 
-// 4.3 — Select de categoria
+// Select de categoria
 function initCategorySelect() {
   const select = document.getElementById('filter-category');
   if (!select) return;
@@ -203,7 +147,7 @@ function initCategorySelect() {
   select.addEventListener('change', () => applyFilters());
 }
 
-// 4.4 — Lê o estado atual de todos os filtros e re-renderiza a lista
+// Lê o estado atual de todos os filtros e re-renderiza a lista
 function applyFilters() {
   const resultsContainer = document.getElementById('results-list');
   if (!resultsContainer) return;

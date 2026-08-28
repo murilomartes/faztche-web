@@ -1,11 +1,6 @@
-/* =========================================
-   LAYOUT — "screen" (moldura de celular)
-   Único lugar do projeto que decide como a
-   página se comporta em telas maiores que
-   um celular. Mobile-first: a base (sem
-   @media) É o mobile — ocupa a tela real,
-   sem limite de largura.
-========================================= */
+/* Layout "screen" (moldura de celular) — único lugar do projeto que decide
+   como a página se comporta em telas maiores que um celular. Mobile-first:
+   a base (sem @media) é o mobile, ocupando a tela real sem limite de largura. */
 
 body {
   font-family: var(--font-base);
@@ -15,7 +10,7 @@ body {
   justify-content: center;
 }
 
-/* ----- Mobile (base) ----- */
+/* Mobile (base) */
 .screen {
   width: 100%;
   min-height: 100dvh; /* ajuste perfeito em navegadores mobile */
@@ -26,9 +21,7 @@ body {
   overflow: hidden; /* evita vazamentos de rolagem */
 }
 
-/* ----- Tablet e acima -----
-   Em telas maiores que um celular, simula a
-   moldura de um app: largura fixa, centralizada,
+/* Tablet e acima: simula a moldura de um app — largura fixa, centralizada,
    com cantos arredondados e sombra. */
 @media (min-width: 640px) {
   .screen {

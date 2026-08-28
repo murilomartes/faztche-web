@@ -1,26 +1,7 @@
-/* =========================================================
-   home.js — Lógica da tela Início (FazTchê)
-   -----------------------------------------------------------
-   Organizado por seções:
-     1. Inicialização geral (único DOMContentLoaded)
-     2. Drawer de Perfil (abrir/fechar)
-     3. Feed da Comunidade (mock data + render + ações)
-     4. Estabelecimentos "Perto de Você" (mock data + render)
-     5. Categorias (filtro + botão "Ver mais")
-     6. Drawer lateral de Categorias (estilo iFood)
-     7. Carrossel de Banners/Promoções (mock data + swipe)
-   ========================================================= */
+// home.js — lógica da tela Início (feed, categorias, carrossel de banners)
+// O drawer de perfil e o bottom-nav vêm de js/components/.
 
-
-/* =========================================================
-   1. INICIALIZAÇÃO GERAL
-   -----------------------------------------------------------
-   Antes existiam vários "DOMContentLoaded" espalhados pelo
-   arquivo (um para cada função). Foram unificados em um só,
-   chamando cada init na ordem em que aparece na tela.
-   ========================================================= */
 document.addEventListener('DOMContentLoaded', () => {
-  initProfileDrawer();
   initBannerCarousel();
   initCommunityFeed();
   initNearbyCarousel();
@@ -29,47 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-/* =========================================================
-   2. DRAWER LATERAL DE PERFIL
-   -----------------------------------------------------------
-   Abre/fecha o menu lateral de perfil e segurança, travando
-   o scroll do body enquanto ele está aberto.
-   ========================================================= */
-function initProfileDrawer() {
-  const openBtn = document.getElementById('open-profile-drawer');
-  const closeBtn = document.getElementById('close-profile-drawer');
-  const drawer = document.getElementById('profile-drawer');
-  const overlay = document.getElementById('profile-overlay');
+// Feed da comunidade
 
-  if (!drawer || !overlay) return;
-
-  function openProfile() {
-    drawer.classList.add('active');
-    overlay.classList.add('active');
-    document.body.style.overflow = 'hidden'; // evita rolagem da tela de fundo
-  }
-
-  function closeProfile() {
-    drawer.classList.remove('active');
-    overlay.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-
-  if (openBtn) openBtn.addEventListener('click', openProfile);
-  if (closeBtn) closeBtn.addEventListener('click', closeProfile);
-  overlay.addEventListener('click', closeProfile);
-}
-
-
-/* =========================================================
-   3. FEED DA COMUNIDADE
-   -----------------------------------------------------------
-   3.1 Dados simulados (mock)
-   3.2 Inicialização / renderização
-   3.3 Ações do post (curtir, comentar, compartilhar)
-   ========================================================= */
-
-// 3.1 — Dados simulados do feed
+// Dados simulados do feed
 const mockPosts = [
   {
     id: 1,
@@ -101,7 +44,7 @@ const mockPosts = [
   }
 ];
 
-// 3.2 — Inicializa e renderiza o feed no container
+// Inicializa e renderiza o feed no container
 function initCommunityFeed() {
   const postsContainer = document.getElementById('posts-container');
   if (!postsContainer) return;
@@ -168,7 +111,7 @@ function renderFeed(posts, container) {
   `).join('');
 }
 
-// 3.3 — Ações interativas do post
+// Ações interativas do post
 function handleLike(postId) {
   const post = mockPosts.find(p => p.id === postId);
   if (!post) return;
@@ -203,14 +146,9 @@ function sharePost(postId) {
 }
 
 
-/* =========================================================
-   4. ESTABELECIMENTOS "PERTO DE VOCÊ"
-   -----------------------------------------------------------
-   4.1 Dados simulados (mock)
-   4.2 Inicialização / renderização
-   ========================================================= */
+// Estabelecimentos "Perto de Você"
 
-// 4.1 — Dados simulados dos estabelecimentos próximos
+// Dados simulados dos estabelecimentos próximos
 const mockNearby = [
   {
     id: 101,
@@ -238,7 +176,7 @@ const mockNearby = [
   }
 ];
 
-// 4.2 — Inicializa e renderiza o carrossel de "Perto de Você"
+// Inicializa e renderiza o carrossel de "Perto de Você"
 function initNearbyCarousel() {
   renderNearbyCarousel();
 }
@@ -274,41 +212,25 @@ function openPlaceDetails(id) {
 }
 
 
-/* =========================================================
-   5. CATEGORIAS (carrossel de filtros)
-   -----------------------------------------------------------
-   Observação: antes existiam DUAS funções fazendo praticamente
-   a mesma coisa (initCategorySelection e initCategories). Foram
-   unificadas em uma só, que cuida tanto da seleção/filtro das
-   categorias quanto do botão "Ver mais".
-   ========================================================= */
+// Categorias (carrossel de filtros)
 function initCategories() {
   const filterCategories = document.querySelectorAll('.category-item:not(.category-more-btn)');
   const openMenuBtn = document.getElementById('open-categories-menu');
 
-  // 5.1 — Clique em uma categoria: alterna o estado ativo (multi-seleção, ver toggleCategory na seção 6)
+  // Clique em uma categoria: alterna o estado ativo (multi-seleção, ver toggleCategory abaixo)
   filterCategories.forEach(item => {
     item.addEventListener('click', () => toggleCategory(item.dataset.category));
   });
 
-  // 5.2 — Clique em "Ver mais": abre o drawer lateral de categorias
+  // Clique em "Ver mais": abre o drawer lateral de categorias
   if (openMenuBtn) {
     openMenuBtn.addEventListener('click', openCategoriesDrawer);
   }
 }
 
 
-/* =========================================================
-   6. DRAWER LATERAL DE CATEGORIAS (estilo iFood)
-   -----------------------------------------------------------
-   Aberto pelo card "Ver mais" (seção 5). Mostra a grade
-   completa de categorias; ao escolher uma categoria aqui,
-   sincroniza a seleção com o carrossel principal. O drawer
-   não fecha sozinho ao selecionar — assim dá pra marcar
-   várias categorias antes de fechar pelo X ou pelo overlay.
-   A lista de categorias no HTML é só um exemplo genérico
-   por enquanto — trocar pela lista final depois.
-   ========================================================= */
+// Drawer lateral de categorias (estilo iFood), aberto pelo card "Ver mais".
+// Não fecha sozinho ao selecionar, para dar pra marcar várias antes de fechar.
 function initCategoriesDrawer() {
   const drawer = document.getElementById('categories-drawer');
   const overlay = document.getElementById('categories-overlay');
@@ -369,28 +291,18 @@ function getSelectedCategories() {
 }
 
 
-/* =========================================================
-   7. CARROSSEL DE BANNERS / PROMOÇÕES
-   -----------------------------------------------------------
-   7.1 Dados simulados (mock)
-   7.2 Inicialização / renderização
-   7.3 Sincronização das bolinhas com o swipe
-   -----------------------------------------------------------
-   O "deslizar com o dedo" vem do scroll nativo do trilho
-   (.banner-track tem overflow-x + scroll-snap no CSS) — não
-   precisa reimplementar drag manualmente. O JS aqui só cuida
-   de montar os slides e manter a bolinha ativa em sincronia
-   com a posição do scroll.
-   ========================================================= */
+// Carrossel de banners/promoções. O "deslizar com o dedo" vem do scroll
+// nativo do trilho (.banner-track tem overflow-x + scroll-snap no CSS) —
+// o JS aqui só monta os slides e mantém a bolinha ativa em sincronia.
 
-// 7.1 — Dados simulados dos banners
+// Dados simulados dos banners
 const mockBanners = [
   { id: 1, image: "../../assets/images/promocao_placeholder.png", alt: "Promoção 1" },
   { id: 2, image: "../../assets/images/promocao_placeholder.png", alt: "Promoção 2" },
   { id: 3, image: "../../assets/images/promocao_placeholder.png", alt: "Promoção 3" }
 ];
 
-// 7.2 — Monta os slides e as bolinhas, e liga o scroll ao troca-bolinha
+// Monta os slides e as bolinhas, e liga o scroll ao troca-bolinha
 function initBannerCarousel() {
   const track = document.getElementById('banner-track');
   const dotsContainer = document.getElementById('banner-dots');
@@ -431,7 +343,7 @@ function renderBannerDots(banners, dotsContainer) {
   `).join('');
 }
 
-// 7.3 — Calcula qual slide está mais visível e marca a bolinha correspondente
+// Calcula qual slide está mais visível e marca a bolinha correspondente
 function updateActiveDot(track, dotsContainer) {
   const slideWidth = track.clientWidth;
   if (!slideWidth) return;

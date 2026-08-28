@@ -1,11 +1,4 @@
-/* =========================================
-   COMPONENTE — Botões
-
-   .btn é a base; combine sempre com uma
-   variante (.btn-primary, .btn-dark, ...).
-========================================= */
-
-/* Configurações de Botão */
+/* .btn é a base; combine sempre com uma variante (.btn-primary, .btn-dark, ...) */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -19,11 +12,9 @@
   font-size: 15px;
   cursor: pointer;
   text-decoration: none;
-  /* Atualizado: transição suave para transform e box-shadow */
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Substitua o .btn:hover antigo por este conjunto */
 .btn:hover {
   transform: translateY(-2px);
   filter: brightness(1.08);

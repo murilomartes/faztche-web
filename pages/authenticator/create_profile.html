@@ -14,9 +14,7 @@
 
   <div class="screen onboarding-screen">
 
-    <!-- =========================================================
-         1. HEADER (voltar + título da etapa)
-    ========================================================== -->
+    <!-- Header: voltar + título da etapa -->
     <header class="onboarding-header">
       <button class="back-btn" id="back-btn" aria-label="Voltar">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b2b3c" stroke-width="2.2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
@@ -27,10 +25,7 @@
 
     <main class="onboarding-content">
 
-      <!-- =========================================================
-           2. UPLOAD DE FOTO DE PERFIL
-           Lógica em: js/pages/completar-perfil.js
-      ========================================================== -->
+      <!-- Upload de foto de perfil -->
       <section class="photo-upload-section">
         <button class="photo-upload-circle" id="photo-upload-btn" type="button" aria-label="Adicionar foto de perfil">
           <img id="photo-preview" class="photo-preview" alt="" hidden>
@@ -43,11 +38,7 @@
         <span class="photo-upload-label">Adicione uma foto</span>
       </section>
 
-      <!-- =========================================================
-           3. SELETOR DE TIPO DE PERFIL
-           Define quais campos do formulário aparecem abaixo.
-           Lógica em: js/pages/completar-perfil.js → initProfileTypeSelector()
-      ========================================================== -->
+      <!-- Seletor de tipo de perfil: define quais campos aparecem abaixo -->
       <section class="profile-type-section">
         <span class="profile-type-label">Este perfil é para...</span>
         <div class="profile-type-selector" id="profile-type-selector" role="radiogroup" aria-label="Tipo de perfil">
@@ -67,56 +58,46 @@
         <input type="hidden" id="profile-type-input" value="watcher">
       </section>
 
-      <!-- =========================================================
-           4. FORMULÁRIO
-           Campos com [data-for] só aparecem para os tipos listados
-           ali (ver applyProfileType() no JS).
-      ========================================================== -->
+      <!-- Formulário: campos com [data-for] só aparecem para os tipos
+           listados ali (ver applyProfileType() no JS) -->
       <form class="profile-form" id="profile-form">
 
-        <!-- 4.1 Nome (todos os tipos — rótulo/placeholder mudam pra "Empresa") -->
         <div class="form-field" data-for="watcher professional enterprise">
           <label for="field-name" id="field-name-label">Nome</label>
           <input type="text" id="field-name" placeholder="Seu nome" required>
         </div>
 
-        <!-- 4.1 Nome (todos os tipos — rótulo/placeholder mudam pra "Empresa") -->
         <div class="form-field" data-for="watcher">
           <label for="field-name" id="field-name-label">CPF</label>
           <input type="text" id="field-name" placeholder="CPF:000.000.000-00" required>
         </div>
 
-        <!-- 4.1 Nome (todos os tipos — rótulo/placeholder mudam pra "Empresa") -->
         <div class="form-field" data-for="professional enterprise">
           <label for="field-name" id="field-name-label">CNPJ</label>
           <input type="text" id="field-name" placeholder="CPF:000.000.000-00" required>
         </div>
 
-        <!-- 4.2 Sobrenome (watcher e professional — pessoa física) -->
+        <!-- Sobrenome (watcher e professional — pessoa física) -->
         <div class="form-field" data-for="watcher professional">
           <label for="field-lastname">Sobrenome</label>
           <input type="text" id="field-lastname" placeholder="Seu sobrenome">
         </div>
 
-        <!-- 4.3 Data de nascimento (só watcher) -->
         <div class="form-field" data-for="watcher">
           <label for="field-birthdate">Data de nascimento</label>
           <input type="date" id="field-birthdate">
         </div>
 
-        <!-- 4.4 Telefone (professional e enterprise) -->
         <div class="form-field" data-for="professional enterprise">
           <label for="field-phone">Número de telefone</label>
           <input type="tel" id="field-phone" placeholder="(51) 90000-0000">
         </div>
 
-        <!-- 4.5 Data de criação (professional e enterprise) -->
         <div class="form-field" data-for="professional enterprise">
           <label for="field-creation-date" id="field-creation-date-label">Data de criação</label>
           <input type="date" id="field-creation-date">
         </div>
 
-        <!-- 4.6 Cidade (todos os tipos) -->
         <div class="form-field" data-for="watcher professional enterprise">
           <label for="field-city">Cidade</label>
           <div class="input-with-icon">
@@ -125,7 +106,6 @@
           </div>
         </div>
 
-        <!-- 4.7 Bairro (todos os tipos) -->
         <div class="form-field" data-for="watcher professional enterprise">
           <label for="field-neighborhood">Bairro</label>
           <div class="select-with-icon">
@@ -143,7 +123,7 @@
           </div>
         </div>
 
-        <!-- 4.8 Categoria (só professional e enterprise — seleção única) -->
+        <!-- Categoria (só professional e enterprise) -->
         <div class="form-field" data-for="professional enterprise">
           <label for="field-category">Categoria</label>
           <div class="select-with-icon">
@@ -166,7 +146,6 @@
           </div>
         </div>
 
-        <!-- 4.9 Card de verificação de identidade (todos os tipos) -->
         <a href="../profile/identidade.html" class="identity-card" data-for="watcher professional enterprise">
           <span class="identity-icon">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
@@ -178,7 +157,6 @@
           <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
         </a>
 
-        <!-- 4.10 Botão de conclusão -->
         <button type="submit" class="conclude-btn">Concluir perfil</button>
       </form>
     </main>

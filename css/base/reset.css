@@ -1,9 +1,4 @@
-/* =========================================
-   RESET
-   Zera margens/paddings e normaliza o box
-   model em todos os elementos.
-========================================= */
- 
+/* Zera margens/paddings e normaliza o box model em todos os elementos */
 * {
   box-sizing: border-box;
   margin: 0;

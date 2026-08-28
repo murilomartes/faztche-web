@@ -1,5 +1,3 @@
-<!-- Tela de Perfil perfil.html/profile.css/profile.js-->
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -7,62 +5,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FazTchê - Perfil Profissional</title>
-  <!-- 1 - CSS Base / Reset -->
+
   <link rel="stylesheet" href="../../css/base/reset.css">
   <link rel="stylesheet" href="../../css/base/tokens.css">
-  
-  <!-- 2 - CSS Layout & Responsividade -->
   <link rel="stylesheet" href="../../css/layouts/screen.css">
-  
-  <!-- 3 - CSS Componentes -->
   <link rel="stylesheet" href="../../css/components/buttons.css">
   <link rel="stylesheet" href="../../css/components/bottom-nav.css">
   <link rel="stylesheet" href="../../css/components/forms.css">
   <link rel="stylesheet" href="../../css/components/social-buttons.css">
   <link rel="stylesheet" href="../../css/components/divider.css">
-  
-  <!-- 4 - CSS da Página (Estrutura Unificada de Autenticação) -->
   <link rel="stylesheet" href="../../css/pages/profile.css">
 </head>
 <body>
 
-    <!-- =========================================================
-         1. HEADER (saudação, localização, logo, busca e perfil)
-    ========================================================== -->
-    <header class="home-header">
-
-      <!-- 1.1 Linha superior: saudação/localização, logo central e ações -->
-      <div class="header-top">
-
-        <!-- 1.1.1 Saudação + localização atual -->
-        <div class="user-location">
-          <span class="greeting">Boa Noite, Murilo</span>
-          <div class="location-tag">
-            <svg width="12" height="14" viewBox="0 0 24 24" fill="var(--color-primary)"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-            <small>Cachoeirinha</small>
-          </div>
-        </div>
-
-        <!-- 1.1.2 Logo central (também funciona como botão de recarregar a Início) -->
-        <a href="home.html" class="brand-logo" aria-label="Recarregar página inicial">
-          <span class="brand-faz">Faz</span><span class="brand-tche">Tchê</span>
-        </a>
-
-        <!-- 1.1.3 Ações à direita: notificações e avatar (abre o drawer de perfil) -->
-        <div class="header-actions">
-          <button class="icon-btn" aria-label="Notificações">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
-          </button>
-
-          <button class="profile-avatar-btn" id="open-profile-drawer" aria-label="Abrir opções do perfil">
-            <img src="../../assets/images/avatar_placeholder.png" alt="Perfil" class="user-avatar">
-          </button>
-        </div>
-      </div>
-
   <div class="screen profile-screen">
-    
-    <!-- BANNER E NAVEGAÇÃO -->
+
+    <!-- Banner de capa + navegação (voltar/compartilhar) -->
     <div class="profile-header">
       <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=80" alt="Capa Barbearia MK" class="cover-image">
       <div class="header-overlay"></div>
@@ -76,10 +34,10 @@
       </button>
     </div>
 
-    <!-- CONTEÚDO DO PERFIL -->
+    <!-- Conteúdo do perfil -->
     <main class="profile-body">
       
-      <!-- AVATAR COM SELO VERIFICADO -->
+      <!-- Avatar com selo verificado -->
       <div class="avatar-wrapper">
         <div class="avatar">
           <span>MK</span>
@@ -89,7 +47,7 @@
         </div>
       </div>
 
-      <!-- INFORMAÇÕES PRINCIPAIS -->
+      <!-- Informações principais -->
       <section class="profile-info">
         <div class="title-row">
           <h2>Barbearia MK</h2>
@@ -109,7 +67,7 @@
         </p>
       </section>
 
-      <!-- GALERIA DE FOTOS -->
+      <!-- Galeria de fotos -->
       <section class="gallery-section">
         <div class="gallery-grid">
           <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=300&q=80" alt="Trabalho 1">
@@ -118,7 +76,7 @@
         </div>
       </section>
 
-      <!-- BOTÕES DE AÇÃO FIXOS/DE DESTAQUE -->
+      <!-- Botões de ação fixos/de destaque -->
       <section class="action-buttons">
         <button type="button" id="btn-request-quote" class="btn btn-primary">Pedir orçamento</button>
         <button type="button" id="btn-whatsapp" class="btn btn-outline-whatsapp">
@@ -126,35 +84,13 @@
           Chamar no WhatsApp
         </button>
       </section>
-    
+
     </main>
 
-  </div>
-    <!-- =========================================================
-         6. BOTTOM NAV (menu inferior fixo)
-    ========================================================== -->
-    <nav class="bottom-nav">
-      <a href="../app/home.html" class="nav-item">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
-        <span>Início</span>
-      </a>
-      <a href="../app/search.html" class="nav-item">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <span>Buscar</span>
-      </a>
-      <a href="../app/publish.html" class="nav-item publish-btn">
-        <div class="plus-circle">+</div>
-        <span>Publicar</span>
-      </a>
-      <a href="../app/explore.html" class="nav-item">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M16.24 7.76l-2.12 6.36-6.36 2.12 2.12-6.36z"/></svg>
-        <span>Explorar</span>
-      </a>
-      <a href="../profile/profile.html" class="nav-item active">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        <span>Perfil</span>
-      </a>
+    <div id="bottom-nav-root" data-active="profile" data-context="profile"></div>
 
-  <script src="../../js/profile.js"></script>
+  </div>
+
+  <script src="../../js/components/bottom-nav.js"></script>
 </body>
 </html>

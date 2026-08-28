@@ -1,8 +1,3 @@
-/* =========================================
-   PÁGINA — Tela inicial (welcome)
-   Usada por index.html / inicio.html.
-========================================= */
-
 .welcome-screen {
   background-image: url("../../assets/images/background_welcome.png");
   background-size: cover;

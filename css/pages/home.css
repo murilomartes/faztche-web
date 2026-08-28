@@ -1,18 +1,14 @@
-/* =========================================
-   1. TELA PRINCIPAL & ESTRUTURA
-========================================= */
+/* Tela principal & estrutura */
 .home-screen {
   background-color: #f7f9fa;
   padding-bottom: 80px; /* espaço para o bottom-nav fixo */
 }
 
 .home-content {
-  padding-top: 120px; /* compensa o header fixo */
+  margin-top: 80px; /* compensa o header fixo */
 }
 
-/* =========================================
-   2. HEADER & LOGO
-========================================= */
+/* Header & logo */
 .home-header {
   position: fixed;
   top: 0;
@@ -72,9 +68,7 @@
 .brand-faz { color: #0b2b3c; }
 .brand-tche { color: #0d9488; }
 
-/* =========================================
-   3. AÇÕES DO HEADER (notificações e avatar)
-========================================= */
+/* Ações do header (notificações e avatar) */
 .header-actions {
   display: flex;
   align-items: center;
@@ -117,19 +111,8 @@
   object-fit: cover;
 }
 
-/* -----------------------------------------
-   NOTA: Menu suspenso (dropdown) do perfil
-   -----------------------------------------
-   No HTML atual, o clique no avatar abre o
-   DRAWER lateral (#profile-drawer), e não este
-   dropdown. O bloco abaixo parece ser de uma
-   versão anterior da tela e está sem uso na
-   página atual — os estilos do drawer (aside
-   .profile-drawer, .settings-menu, etc.) devem
-   estar em outro arquivo CSS não incluído aqui.
-   Mantido para não quebrar nada, mas vale
-   revisar se ainda é necessário.
------------------------------------------- */
+/* Dropdown do perfil — não usado atualmente (o avatar abre o drawer lateral,
+   ver .profile-drawer mais abaixo). Mantido caso volte a ser necessário. */
 .profile-dropdown {
   position: absolute;
   top: calc(100% + 10px);
@@ -189,9 +172,7 @@
   color: #e11d48;
 }
 
-/* =========================================
-   4. BARRA DE BUSCA
-========================================= */
+/* Barra de busca */
 .search-bar {
   display: flex;
   align-items: center;
@@ -209,9 +190,7 @@
   font-size: 13px;
 }
 
-/* =========================================
-   5. CATEGORIAS
-========================================= */
+/* Categorias */
 .categories-scroll {
   display: flex;
   gap: 12px;
@@ -293,9 +272,7 @@
   transform: scale(0.95);
 }
 
-/* =========================================
-   6. BANNER DE PROMOÇÕES
-========================================= */
+/* Banner de promoções */
 .banner-carousel {
   padding: 0 0 16px;
 }
@@ -351,9 +328,7 @@
   border-radius: 4px;
 }
 
-/* =========================================
-   7. SEÇÃO "PERTO DE VOCÊ"
-========================================= */
+/* Seção "Perto de Você" */
 .section-nearby {
   margin: 24px 0;
 }
@@ -467,9 +442,7 @@
   font-weight: 700;
 }
 
-/* =========================================
-   8. FEED DA COMUNIDADE
-========================================= */
+/* Feed da comunidade */
 .feed-timeline {
   padding: 12px 20px;
 }
@@ -570,24 +543,15 @@
   color: #e11d48;
 }
 
-/* =========================================
-   9. ANIMAÇÕES
-========================================= */
+/* Animações */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-6px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* =========================================
-   10. DRAWER LATERAL DE CATEGORIAS (estilo iFood)
-   -----------------------------------------
-   Segue o mesmo padrão de abertura do drawer de
-   perfil (overlay + painel deslizando da direita),
-   mas com conteúdo em grade de 2 colunas.
-   As classes .drawer-header-bar / .close-drawer-btn
-   já existem (compartilhadas com o drawer de perfil,
-   definidas no CSS do drawer de perfil).
-========================================= */
+/* Drawer lateral de categorias (estilo iFood) — mesmo padrão de abertura
+   do drawer de perfil (overlay + painel deslizando da direita), mas com
+   conteúdo em grade de 2 colunas. */
 
 /* Fundo escurecido atrás do drawer */
 .categories-drawer-overlay {
@@ -693,13 +657,8 @@
   line-height: 1.2;
 }
 
-/* =========================================
-   11. DRAWER LATERAL DE PERFIL E SEGURANÇA
-   -----------------------------------------
-   Mesmo padrão de abertura do drawer de categorias
-   (overlay + painel deslizando da direita), mas com
-   cartão de usuário + lista de configurações.
-========================================= */
+/* Drawer lateral de perfil e segurança — mesmo padrão de abertura do
+   drawer de categorias, mas com cartão de usuário + lista de configurações. */
 
 /* Fundo escurecido atrás do drawer */
 .profile-drawer-overlay {

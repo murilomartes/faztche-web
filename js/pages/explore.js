@@ -1,24 +1,8 @@
-/* =========================================================
-   explore.js — Feed "Explorar" (estilo Reels/TikTok) do FazTchê
-   -----------------------------------------------------------
-   Organizado por seções:
-     1. Inicialização geral
-     2. Dados simulados (mock) dos posts
-     3. Renderização do feed
-     4. Autoplay do vídeo visível (IntersectionObserver)
-     5. Interações do post (play/pause, mudo, curtir, comentar, compartilhar)
-     6. Chips de categoria (filtro)
-   -----------------------------------------------------------
-   Ideia geral: cada post pode ser "video" ou "image". Os vídeos
-   tocam automaticamente só enquanto estão na tela (como num
-   feed de Reels) e começam mudos — o usuário liga o som pelo
-   botão de alto-falante em cada post.
-   ========================================================= */
+// explore.js — feed "Explorar" estilo Reels/TikTok.
+// Cada post pode ser "video" ou "image". Os vídeos tocam automaticamente só
+// enquanto estão na tela e começam mudos — o usuário liga o som pelo botão
+// de alto-falante em cada post.
 
-
-/* =========================================================
-   1. INICIALIZAÇÃO GERAL
-   ========================================================= */
 document.addEventListener('DOMContentLoaded', () => {
   initExploreFeed();
   initCategoryTabs();
@@ -36,18 +20,11 @@ function initExploreFeed() {
 }
 
 
-/* =========================================================
-   2. DADOS SIMULADOS (MOCK) DOS POSTS
-   -----------------------------------------------------------
-   type: "video" | "image"
-   category: "servicos" | "turismo" | "promocoes"
-   (a aba "Para você" mostra todos, sem filtrar por categoria)
-
-   Os vídeos aqui são exemplos públicos de teste (Big Buck Bunny
-   e outros vídeos de demonstração do Google) — só pra já testar
-   o player funcionando. Trocar pelas mídias reais dos usuários
-   quando o upload de vídeo existir.
-   ========================================================= */
+// Dados simulados dos posts.
+// type: "video" | "image"; category: "servicos" | "turismo" | "promocoes"
+// (a aba "Para você" mostra todos, sem filtrar por categoria)
+// Os vídeos são exemplos públicos de teste (Big Buck Bunny e outros vídeos
+// de demonstração do Google) — trocar pelas mídias reais quando o upload existir.
 const mockExplorePosts = [
   {
     id: 1,
@@ -130,9 +107,7 @@ const mockExplorePosts = [
 ];
 
 
-/* =========================================================
-   3. RENDERIZAÇÃO DO FEED
-   ========================================================= */
+// Renderização do feed
 function renderFeed(posts, container) {
   if (posts.length === 0) {
     container.innerHTML = `<p class="empty-feed-message">Ainda não tem publicações nessa categoria.</p>`;
@@ -220,15 +195,9 @@ function muteIconSvg(isMuted) {
 }
 
 
-/* =========================================================
-   4. AUTOPLAY DO VÍDEO VISÍVEL (IntersectionObserver)
-   -----------------------------------------------------------
-   Cada .feed-item vira "ativo" quando ocupa boa parte da tela
-   (o scroll-snap já garante que só um por vez fica assim).
-   O vídeo desse item toca; os outros ficam pausados e voltam
-   pro início, pra economizar recurso e não continuar tocando
-   som fora de tela.
-   ========================================================= */
+// Autoplay do vídeo visível (IntersectionObserver). Cada .feed-item vira "ativo"
+// quando ocupa boa parte da tela (o scroll-snap garante só um por vez); o vídeo
+// desse item toca, os outros pausam e voltam pro início.
 function observeFeedItems(container) {
   if (feedObserver) feedObserver.disconnect();
 
@@ -253,13 +222,9 @@ function observeFeedItems(container) {
 }
 
 
-/* =========================================================
-   5. INTERAÇÕES DO POST
-   -----------------------------------------------------------
-   Um único listener de clique no feed (delegação de evento),
-   lendo o atributo [data-action] de quem foi clicado — evita
-   precisar re-ligar listeners toda vez que o feed é re-renderizado.
-   ========================================================= */
+// Interações do post: um único listener de clique no feed (delegação de
+// evento), lendo [data-action] de quem foi clicado — evita re-ligar
+// listeners toda vez que o feed é re-renderizado.
 document.addEventListener('DOMContentLoaded', () => {
   const feedContainer = document.getElementById('explore-feed');
   if (!feedContainer) return;
@@ -347,14 +312,9 @@ function sharePost(postId) {
 }
 
 
-/* =========================================================
-   6. CHIPS DE CATEGORIA (FILTRO)
-   -----------------------------------------------------------
-   "Para você" mostra todos os posts; as outras abas filtram
-   pelo campo "category" do mock. Ao trocar de aba, o feed é
-   re-renderizado do zero e o observer de autoplay é recriado
-   (senão continuaria observando elementos que não existem mais).
-   ========================================================= */
+// Chips de categoria (filtro). "Para você" mostra todos os posts; as outras
+// abas filtram pelo campo "category" do mock. Ao trocar de aba, o feed é
+// re-renderizado e o observer de autoplay é recriado.
 function initCategoryTabs() {
   const tabs = document.querySelectorAll('.tab-chip');
   const feedContainer = document.getElementById('explore-feed');

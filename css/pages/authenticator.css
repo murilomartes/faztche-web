@@ -1,8 +1,6 @@
-/* =========================================
-   ESTRUTURA COMPARTILHADA — Autenticação
-========================================= */
+/* Estrutura compartilhada de autenticação (login/cadastro) */
 
-/* Hero Topo (Foto + Imagem de Fundo) */
+/* Hero do topo: foto + imagem de fundo */
 .auth-hero {
   position: relative;
   width: 100%;
@@ -33,7 +31,7 @@
   display: block;
 }
 
-/* Conteúdo Principal / Form */
+/* Conteúdo principal / form */
 .auth-content {
   display: flex;
   flex-direction: column;
@@ -42,7 +40,7 @@
   flex: 1;
 }
 
-/* Logotipo Sobreposto */
+/* Logotipo sobreposto */
 .auth-logo {
   display: flex;
   justify-content: center;
@@ -83,7 +81,7 @@
   text-align: center;
 }
 
-/* Formulário e Campos */
+/* Formulário e campos */
 .auth-form {
   display: flex;
   flex-direction: column;
@@ -98,7 +96,7 @@
   padding: clamp(10px, 1.8vh, 14px) 20px;
 }
 
-/* Links adicionais (Esqueci a senha, etc) */
+/* Links adicionais (esqueci a senha, etc.) */
 .forgot-password {
   text-align: right;
   margin-top: -4px;

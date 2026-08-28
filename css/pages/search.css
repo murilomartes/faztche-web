@@ -1,7 +1,3 @@
-/* =========================================
-   PÁGINA — Buscar (search.css)
-========================================= */
-
 .search-screen {
   background-color: #f7f9fa;
   padding-bottom: 80px;
@@ -27,8 +23,7 @@
   color: var(--color-dark, #0b2b3c);
 }
 
-/* Linha superior do header: título à esquerda, logo centralizada, ações à direita
-   (mesmo padrão visual do header da Início) */
+/* Linha superior do header: título à esquerda, logo centralizada, ações à direita */
 .header-top {
   position: relative; /* referência para a logo centralizada em .brand-logo */
   display: flex;
@@ -248,13 +243,7 @@
   font-size: 14px;
 }
 
-/* =========================================
-   DRAWER LATERAL DE PERFIL E SEGURANÇA
-   -----------------------------------------
-   Mesmo bloco usado no home.css — painel deslizando
-   da direita, com cartão de usuário + lista de
-   configurações.
-========================================= */
+/* Drawer lateral de perfil e segurança (mesmo bloco usado no home.css) */
 
 /* Fundo escurecido atrás do drawer */
 .profile-drawer-overlay {

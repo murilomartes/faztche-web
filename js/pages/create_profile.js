@@ -1,17 +1,5 @@
-/* =========================================================
-   completar-perfil.js — Etapa "Complete seu perfil" (onboarding)
-   -----------------------------------------------------------
-   Organizado por seções:
-     1. Inicialização geral
-     2. Upload de foto (seleção + preview local)
-     3. Seletor de tipo de perfil (watcher / professional / enterprise)
-     4. Envio do formulário (simulado por enquanto)
-   ========================================================= */
+// create_profile.js — etapa "Complete seu perfil" (onboarding)
 
-
-/* =========================================================
-   1. INICIALIZAÇÃO GERAL
-   ========================================================= */
 document.addEventListener('DOMContentLoaded', () => {
   initBackButton();
   initPhotoUpload();
@@ -31,22 +19,11 @@ function initBackButton() {
 }
 
 
-/* =========================================================
-   2. UPLOAD DE FOTO (seleção + preview local)
-   -----------------------------------------------------------
-   Clicar no círculo abre o seletor de arquivo do sistema.
-   Ao escolher uma imagem, mostramos um preview local com
-   URL.createObjectURL — isso NÃO envia o arquivo pra lugar
-   nenhum ainda, é só visual, direto no navegador.
-
-   IMPORTANTE — sobre gravar em media_storage_test/:
-   por segurança, o navegador não deixa JavaScript escrever
-   arquivos direto numa pasta do projeto. Pra isso funcionar de
-   verdade é preciso um back-end recebendo o arquivo (formulário
-   multipart) e salvando ele na pasta. selectedPhotoFile abaixo
-   guarda o arquivo escolhido, pronto pra ser enviado assim que
-   esse endpoint existir — ver TODO em handleFormSubmit().
-   ========================================================= */
+// Upload de foto: clicar no círculo abre o seletor de arquivo do sistema;
+// ao escolher uma imagem, mostra um preview local com URL.createObjectURL
+// (não envia o arquivo a lugar nenhum ainda). selectedPhotoFile guarda o
+// arquivo escolhido, pronto pra enviar quando o endpoint existir (ver
+// handleFormSubmit) — o navegador sozinho não pode gravar num back-end.
 let selectedPhotoFile = null;
 
 function initPhotoUpload() {
@@ -73,21 +50,10 @@ function initPhotoUpload() {
 }
 
 
-/* =========================================================
-   3. SELETOR DE TIPO DE PERFIL
-   -----------------------------------------------------------
-   Três tipos: "watcher" (usuário comum), "professional" e
-   "enterprise". Cada campo do formulário tem um atributo
-   [data-for] com a lista de tipos em que ele deve aparecer
-   (ver HTML) — applyProfileType() lê isso e mostra/esconde
-   os campos, além de ajustar quais são obrigatórios.
-
-   Regras atuais:
-   - Nome: todos os tipos (rótulo/placeholder muda pra Empresa)
-   - Sobrenome + Data de nascimento: só "watcher"
-   - Telefone + Data de criação + Categoria: "professional" e "enterprise"
-   - Cidade, Bairro, verificação de identidade: todos os tipos
-   ========================================================= */
+// Seletor de tipo de perfil: "watcher" (usuário comum), "professional" e
+// "enterprise". Cada campo do formulário tem um atributo [data-for] com a
+// lista de tipos em que deve aparecer (ver HTML) — applyProfileType() lê
+// isso e mostra/esconde os campos, além de ajustar quais são obrigatórios.
 function initProfileTypeSelector() {
   const options = document.querySelectorAll('.type-option');
   const typeInput = document.getElementById('profile-type-input');
@@ -152,14 +118,8 @@ function applyProfileType(type) {
 }
 
 
-/* =========================================================
-   4. ENVIO DO FORMULÁRIO (simulado por enquanto)
-   -----------------------------------------------------------
-   Por enquanto só reúne os dados no console, pra já dar pra
-   testar o fluxo completo de preenchimento sem precisar de
-   back-end pronto. Os campos lidos mudam conforme o tipo
-   selecionado (os que estão escondidos ficam null/vazios).
-   ========================================================= */
+// Envio do formulário (simulado por enquanto — só reúne os dados no console,
+// pra já dar pra testar o fluxo sem precisar de back-end pronto)
 function initFormSubmit() {
   const form = document.getElementById('profile-form');
   if (!form) return;

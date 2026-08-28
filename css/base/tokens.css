@@ -1,31 +1,12 @@
-/* =========================================
-   TOKENS
-   Fonte, cores, raios e sombras usados em
-   todo o projeto. Nenhuma regra de layout
-   ou de tela específica deve entrar aqui —
-   só variáveis e a fonte.
-========================================= */
+/* Tokens: fonte, cores, raios e sombras usados em todo o projeto.
+   Nenhuma regra de layout ou de tela específica deve entrar aqui. */
 
 /* Poppins via Google Fonts — troque se descobrir a fonte exata da marca */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-/*
-  ===== Breakpoints (mobile-first) =====
-  Todo CSS deste projeto é escrito mobile-first: as regras SEM @media
-  são a base e valem para MOBILE. Cada @media (min-width) liga estilos
-  extras a partir daquele tamanho — nunca o contrário.
-
-  CSS puro não tem @custom-media sem um pós-processador (ex: PostCSS),
-  então usamos estes valores como referência fixa em todo o projeto:
-
-    mobile   -> base, sem @media           0    – 639px
-    tablet   -> @media (min-width: 640px)  640  – 1023px
-    desktop  -> @media (min-width: 1024px) 1024px+
-
-  Ao adicionar uma tela nova, comece só com a versão mobile (sem
-  @media) e adicione @media (min-width: 640px)/(min-width: 1024px)
-  apenas se o layout realmente precisar mudar em telas maiores.
-*/
+/* Breakpoints (mobile-first): regras sem @media valem para mobile (0–639px);
+   @media (min-width: 640px) liga tablet (640–1023px); (min-width: 1024px)
+   liga desktop (1024px+). Ao criar uma tela nova, comece só pelo mobile. */
 
 :root {
   --color-bg: #ffffff;

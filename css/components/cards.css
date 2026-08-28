@@ -1,7 +1,3 @@
-/* =========================================
-   COMPONENTE — Card
-========================================= */
-
 .card {
   background: #ffffff;
   border-radius: var(--radius-card);

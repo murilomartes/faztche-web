@@ -15,8 +15,7 @@
 <body>
 
   <div class="screen publish-screen">
-    
-    <!-- HEADER COM BOTAO DE VOLTAR -->
+
     <header class="publish-header">
       <a href="inicio.html" class="back-btn" aria-label="Voltar">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2.5">
@@ -29,7 +28,7 @@
     <main class="publish-content">
       <p class="section-title">O que você quer publicar?</p>
 
-      <!-- GRID DE OPÇÕES DE PUBLICAÇÃO -->
+      <!-- Grid de opções de publicação -->
       <div class="options-grid">
         <button type="button" class="option-card active" data-type="foto">
           <div class="icon-box green">
@@ -74,7 +73,7 @@
         </button>
       </div>
 
-      <!-- CAMPO DE LOCALIZAÇÃO -->
+      <!-- Campo de localização -->
       <div class="location-input-group">
         <label for="location-field">Localização</label>
         <div class="location-wrapper">
@@ -83,38 +82,15 @@
         </div>
       </div>
 
-      <!-- BOTAO DE AÇÃO PRINCIPAL -->
+      <!-- Botão de ação principal -->
       <button type="button" id="publish-submit-btn" class="btn btn-orange">Publicar agora</button>
     </main>
 
-    <!-- =========================================================
-         6. BOTTOM NAV (menu inferior fixo)
-    ========================================================== -->
-    <nav class="bottom-nav">
-      <a href="home.html" class="nav-item">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
-        <span>Início</span>
-      </a>
-      <a href="search.html" class="nav-item">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <span>Buscar</span>
-      </a>
-      <a href="publish.html" class="nav-item active publish-btn">
-        <div class="plus-circle">+</div>
-        <span>Publicar</span>
-      </a>
-      <a href="explore.html" class="nav-item">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M16.24 7.76l-2.12 6.36-6.36 2.12 2.12-6.36z"/></svg>
-        <span>Explorar</span>
-      </a>
-      <a href="../profile/profesional.html" class="nav-item">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        <span>Perfil</span>
-      </a>
-    </nav>
+    <div id="bottom-nav-root" data-active="publish" data-context="app"></div>
 
   </div>
 
+  <script src="../../js/components/bottom-nav.js"></script>
   <script src="../../js/publish.js"></script>
 </body>
 </html>

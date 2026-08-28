@@ -1,13 +1,9 @@
-<!-- Tela de boas-vindas index.html/welcome.css
- ==============================================
- -> criar-conta.html/signup.css
- -> conta.html/account.css
- ==============================================
--->
+<!-- Tela de boas-vindas (index.html/welcome.css) -> signup.html -> login.html -->
 
 <!DOCTYPE html>
 <html lang="pt-BR">
 
+<!-- 0 CSS imports base -->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,8 +22,9 @@
 </head>
 
 <body>
-  <!-- 1 Div Image -->
+  <!-- 1 Main Content -->
   <div class="screen welcome-screen">
+    <!-- 1.1 Imagem Principal e componentes -->
     <div class="welcome-header">
       <p>
         Encontre. <br>
@@ -36,8 +33,7 @@
       </p>
       <img src="assets/icons/logo_white.png" alt="logo FazTchê">
     </div>
-    
-  <!-- 2 Div Botões -->
+    <!-- 1.2 Botões de Ação -->
     <div class="welcome-actions">
       <a href="pages/authenticator/signup.html" class="btn btn-primary">
         Criar conta
@@ -46,8 +42,10 @@
         Entrar
       </a>
     </div>
+
   </div>
 
+  <!-- 2 Chamada de Script -->
   <script src="js/pages/welcome.js"></script>
 
 </body>

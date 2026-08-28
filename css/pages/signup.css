@@ -1,10 +1,5 @@
-/* =========================================
-   PÁGINA — Cadastro (criar-conta.html)
-   Reaproveita os componentes .field, .btn e
-   .social-* — aqui ficam só o cabeçalho com
-   foto/curva, o logo e os ajustes locais de
-   espaçamento dessa tela.
-========================================= */
+/* Página de cadastro — reaproveita .field, .btn e .social-*; aqui ficam só o
+   cabeçalho com foto/curva, o logo e os ajustes locais de espaçamento. */
 
 .signup-photo {
   position: relative;

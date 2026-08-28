@@ -5,29 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FazTchê - Início</title>
 
-  <!-- 1. CSS Base (reset e tokens de design) -->
+  <!-- CSS base, layout, componentes e da página -->
   <link rel="stylesheet" href="../../css/base/reset.css">
   <link rel="stylesheet" href="../../css/base/tokens.css">
-  <!-- 2. CSS de layout responsivo -->
   <link rel="stylesheet" href="../../css/layouts/screen.css">
-  <!-- 3. CSS de componentes reutilizáveis -->
   <link rel="stylesheet" href="../../css/components/bottom-nav.css">
-  <!-- 4. CSS específico desta página -->
   <link rel="stylesheet" href="../../css/pages/home.css">
 </head>
 <body>
 
   <div class="screen home-screen">
 
-    <!-- =========================================================
-         1. HEADER (saudação, localização, logo, busca e perfil)
-    ========================================================== -->
+    <!-- Header: saudação/localização + componente de logo/ações -->
     <header class="home-header">
-
-      <!-- 1.1 Linha superior: saudação/localização, logo central e ações -->
       <div class="header-top">
-
-        <!-- 1.1.1 Saudação + localização atual -->
         <div class="user-location">
           <span class="greeting">Boa Noite, Murilo</span>
           <div class="location-tag">
@@ -35,37 +26,18 @@
             <small>Cachoeirinha</small>
           </div>
         </div>
-
-        <!-- 1.1.2 Logo central (também funciona como botão de recarregar a Início) -->
-        <a href="home.html" class="brand-logo" aria-label="Recarregar página inicial">
-          <span class="brand-faz">Faz</span><span class="brand-tche">Tchê</span>
-        </a>
-
-        <!-- 1.1.3 Ações à direita: notificações e avatar (abre o drawer de perfil) -->
-        <div class="header-actions">
-          <button class="icon-btn" aria-label="Notificações">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
-          </button>
-
-          <button class="profile-avatar-btn" id="open-profile-drawer" aria-label="Abrir opções do perfil">
-            <img src="../../assets/images/avatar_placeholder.png" alt="Perfil" class="user-avatar">
-          </button>
-        </div>
-      </div>
-
-      <!-- 1.2 Barra de busca -->
-      <div class="search-bar">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <input type="text" placeholder="O que você precisa?">
+        <div id="header-actions-root" data-context="app"></div>
       </div>
     </header>
 
     <main class="home-content">
-
-      <!-- =========================================================
-           2. CARROSSEL DE CATEGORIAS (com card "Ver mais")
-           Interação (filtro + abrir menu lateral) em: js/pages/home.js → initCategories()
-      ========================================================== -->
+      <!-- 2 Barra de busca -->
+      <div class="search-bar">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" placeholder="O que você precisa?">
+      </div>
+    
+      <!-- Carrossel de categorias (filtro + botão "Ver mais") -->
       <section class="categories-scroll" id="categories-container">
         <button class="category-item active" data-category="barbearia">
           <div class="category-icon-wrapper">
@@ -73,35 +45,30 @@
           </div>
           <span class="category-label">Barbearia</span>
         </button>
-
         <button class="category-item" data-category="confeitaria">
           <div class="category-icon-wrapper">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/></svg>
           </div>
           <span class="category-label">Confeitaria</span>
         </button>
-
         <button class="category-item" data-category="mecanica">
           <div class="category-icon-wrapper">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
           </div>
           <span class="category-label">Mecânica</span>
         </button>
-
         <button class="category-item" data-category="estetica">
           <div class="category-icon-wrapper">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
           </div>
           <span class="category-label">Estética</span>
         </button>
-
         <button class="category-item" data-category="jardinagem">
           <div class="category-icon-wrapper">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22v-9"/><path d="M12 13C7.5 13 4 9.5 4 5c4.5 0 8 3.5 8 8z"/><path d="M12 13c4.5 0 8-3.5 8-8-4.5 0-8 3.5-8 8z"/></svg>
           </div>
           <span class="category-label">Jardinagem</span>
         </button>
-
         <!-- Card especial: abre o menu lateral com todas as categorias -->
         <button class="category-item category-more-btn" id="open-categories-menu">
           <div class="category-icon-wrapper more-wrapper">
@@ -116,11 +83,7 @@
         </button>
       </section>
 
-      <!-- =========================================================
-           3. CARROSSEL DE PROMOÇÕES / BANNERS
-           Desliza com o dedo (scroll nativo com snap). Slides e bolinhas
-           injetados dinamicamente em: js/pages/home.js → initBannerCarousel()
-      ========================================================== -->
+      <!-- Carrossel de promoções/banners (slides via JS, scroll com snap) -->
       <section class="banner-carousel">
         <div class="banner-track" id="banner-track">
           <!-- Slides injetados dinamicamente via JS -->
@@ -130,10 +93,7 @@
         </div>
       </section>
 
-      <!-- =========================================================
-           4. SEÇÃO "PERTO DE VOCÊ" (carrossel horizontal)
-           Conteúdo injetado dinamicamente em: js/pages/home.js → initNearbyCarousel()
-      ========================================================== -->
+      <!-- Seção "Perto de Você" (carrossel horizontal) -->
       <section class="section-nearby">
         <div class="section-header">
           <h2>Perto de Você</h2>
@@ -145,10 +105,7 @@
         </div>
       </section>
 
-      <!-- =========================================================
-           5. FEED DE PUBLICAÇÕES DA COMUNIDADE
-           Conteúdo injetado dinamicamente em: js/pages/home.js → initCommunityFeed()
-      ========================================================== -->
+      <!-- Feed de publicações da comunidade -->
       <section class="feed-timeline">
         <h2>Publicações da Comunidade</h2>
         <div class="posts-list" id="posts-container">
@@ -158,144 +115,15 @@
 
     </main>
 
-    <!-- =========================================================
-         6. BOTTOM NAV (menu inferior fixo)
-    ========================================================== -->
-    <nav class="bottom-nav">
-      <a href="home.html" class="nav-item active">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
-        <span>Início</span>
-      </a>
-      <a href="search.html" class="nav-item">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <span>Buscar</span>
-      </a>
-      <a href="publish.html" class="nav-item publish-btn">
-        <div class="plus-circle">+</div>
-        <span>Publicar</span>
-      </a>
-      <a href="explore.html" class="nav-item">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M16.24 7.76l-2.12 6.36-6.36 2.12 2.12-6.36z"/></svg>
-        <span>Explorar</span>
-      </a>
-      <a href="../profile/profesional.html" class="nav-item">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        <span>Perfil</span>
-      </a>
-    </nav>
+    <div id="bottom-nav-root" data-active="home" data-context="app"></div>
 
-    <!-- =========================================================
-         7. DRAWER LATERAL DE PERFIL E SEGURANÇA
-         Abre/fecha em: js/pages/home.js → initProfileDrawer()
-    ========================================================== -->
-    <div class="profile-drawer-overlay" id="profile-overlay"></div>
+    <div id="profile-drawer-root"></div>
 
-    <aside class="profile-drawer" id="profile-drawer">
-
-      <!-- 7.1 Cabeçalho do drawer -->
-      <div class="drawer-header-bar">
-        <h2>Perfil e segurança</h2>
-        <button class="close-drawer-btn" id="close-profile-drawer" aria-label="Fechar perfil">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0b2b3c" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
-      </div>
-
-      <div class="profile-drawer-scroll">
-
-        <!-- 7.2 Cartão com informações básicas do usuário -->
-        <section class="user-card">
-          <div class="user-avatar-container">
-            <img src="../../assets/images/avatar_placeholder.png" alt="Murilo" class="user-avatar-lg">
-          </div>
-          <div class="user-details">
-            <h3>João da Silva</h3>
-            <span class="user-email">joao.silva@email.com</span>
-            <div class="verified-pill">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="#0d9488"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-              <span>Verificado</span>
-            </div>
-          </div>
-        </section>
-
-        <!-- 7.3 Menu de links e configurações de perfil -->
-        <nav class="settings-menu">
-          <a href="../profile/favoritos.html" class="menu-item">
-            <div class="item-left">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-              <span>Favoritos</span>
-            </div>
-            <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-          </a>
-
-          <a href="../profile/avaliacoes.html" class="menu-item">
-            <div class="item-left">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <span>Minhas avaliações</span>
-            </div>
-            <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-          </a>
-
-          <a href="../profile/identidade.html" class="menu-item">
-            <div class="item-left">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><line x1="15" y1="8" x2="17" y2="8"/><line x1="15" y1="12" x2="17" y2="12"/><line x1="7" y1="16" x2="17" y2="16"/></svg>
-              <span>Verificação de identidade</span>
-            </div>
-            <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-          </a>
-
-          <a href="../profile/privacidade.html" class="menu-item">
-            <div class="item-left">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-              <span>Privacidade</span>
-            </div>
-            <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-          </a>
-
-          <a href="../profile/denuncias.html" class="menu-item">
-            <div class="item-left">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-              <span>Denúncias e relatórios</span>
-            </div>
-            <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-          </a>
-
-          <a href="../profile/ajuda.html" class="menu-item">
-            <div class="item-left">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-              <span>Central de ajuda</span>
-            </div>
-            <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-          </a>
-
-          <a href="../profile/configuracoes.html" class="menu-item">
-            <div class="item-left">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-              <span>Configurações</span>
-            </div>
-            <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-          </a>
-
-          <a href="../../index.html" class="menu-item">
-            <div class="item-left">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-              <span>Sair</span>
-            </div>
-            <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-          </a>
-        </nav>
-      </div>
-    </aside>
-
-    <!-- =========================================================
-         8. DRAWER LATERAL DE CATEGORIAS (inspirado no menu "Ver mais" do iFood)
-         Aberto pelo botão #open-categories-menu (seção 2, card "Ver mais")
-         Abre/fecha em: js/pages/home.js → initCategoriesDrawer()
-    ========================================================== -->
+    <!-- Drawer lateral de categorias, aberto pelo card "Ver mais" -->
     <div class="categories-drawer-overlay" id="categories-overlay"></div>
 
     <aside class="categories-drawer" id="categories-drawer">
 
-      <!-- 8.1 Cabeçalho do drawer -->
       <div class="drawer-header-bar">
         <h2>Categorias</h2>
         <button class="close-drawer-btn" id="close-categories-drawer" aria-label="Fechar categorias">
@@ -305,7 +133,7 @@
 
       <div class="categories-drawer-scroll">
 
-        <!-- 8.2 Grade de categorias (exemplo genérico — substituir pela lista final depois) -->
+        <!-- Grade de categorias (exemplo genérico — substituir pela lista final depois) -->
         <section class="categories-grid-section">
           <h3 class="drawer-section-title">Todas as categorias</h3>
 
@@ -401,7 +229,11 @@
 
   </div>
 
-  <!-- Script com toda a lógica e interações da página -->
+  <!-- Componentes compartilhados (header, bottom-nav, drawer de perfil) -->
+  <script src="../../js/components/header-actions.js"></script>
+  <script src="../../js/components/profile-drawer.js"></script>
+  <script src="../../js/components/bottom-nav.js"></script>
+  <!-- Lógica específica desta página -->
   <script src="../../js/pages/home.js"></script>
 </body>
 </html>
