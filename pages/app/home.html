@@ -16,27 +16,20 @@
 
   <div class="screen home-screen">
 
-    <!-- Header: saudação/localização + componente de logo/ações -->
-    <header class="home-header">
-      <div class="header-top">
-        <div class="user-location">
-          <span class="greeting">Boa Noite, Murilo</span>
-          <div class="location-tag">
-            <svg width="12" height="14" viewBox="0 0 24 24" fill="var(--color-primary)"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-            <small>Cachoeirinha</small>
-          </div>
-        </div>
-        <div id="header-actions-root" data-context="app"></div>
-      </div>
-    </header>
+  <!-- Header: Ações, Logo e Localização injetados via componente JS -->
+  <header class="home-header">
+    <div id="header-actions-root" data-context="app"></div>
+  </header>
+  </header> 
 
     <main class="home-content">
-      <!-- 2 Barra de busca -->
+      <!-- Barra de busca fora do Header, no topo do conteúdo principal -->
       <div class="search-bar">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         <input type="text" placeholder="O que você precisa?">
       </div>
-    
+
+    <main class="home-content">
       <!-- Carrossel de categorias (filtro + botão "Ver mais") -->
       <section class="categories-scroll" id="categories-container">
         <button class="category-item active" data-category="barbearia">
@@ -133,7 +126,7 @@
 
       <div class="categories-drawer-scroll">
 
-        <!-- Grade de categorias (exemplo genérico — substituir pela lista final depois) -->
+        <!-- Grade de categorias -->
         <section class="categories-grid-section">
           <h3 class="drawer-section-title">Todas as categorias</h3>
 
@@ -147,7 +140,7 @@
 
             <button class="grid-category-item" data-category="confeitaria">
               <div class="grid-category-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/></svg>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2-1 2-1"/></svg>
               </div>
               <span>Confeitaria</span>
             </button>
@@ -173,7 +166,6 @@
               <span>Jardinagem</span>
             </button>
 
-            <!-- Exemplos genéricos abaixo — trocar pelo ícone/nome definitivo quando a lista fechar -->
             <button class="grid-category-item" data-category="eletricista">
               <div class="grid-category-icon">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
@@ -229,7 +221,7 @@
 
   </div>
 
-  <!-- Componentes compartilhados (header, bottom-nav, drawer de perfil) -->
+  <!-- Componentes compartilhados -->
   <script src="../../js/components/header-actions.js"></script>
   <script src="../../js/components/profile-drawer.js"></script>
   <script src="../../js/components/bottom-nav.js"></script>
