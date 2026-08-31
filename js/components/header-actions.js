@@ -35,5 +35,5 @@ document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('header-actions-root');
   if (!root) return;
 
-  root.outerHTML = `<div class="header-top-content">${renderHeaderActions(root.dataset.context || 'app')}</div>`;
+  root.outerHTML = `<div class="header-top">${renderHeaderActions(root.dataset.context || 'app')}</div>`;
 });

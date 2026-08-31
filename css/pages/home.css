@@ -5,8 +5,8 @@
 }
 
 .home-content {
-  margin-top: 65px; /* Altura ideal para o header sem a barra de busca */
-  padding: 0 16px;
+  margin-top: 16px; /* precisa bater com a altura real do .home-header */
+  padding: 6px 5px;
 }
 
 /* Header fixo */
@@ -17,7 +17,7 @@
   right: 0;
   z-index: 1000;
   background: #ffffff;
-  padding: 10px 16px;
+  padding: 0 20px;
   border-bottom: 1px solid #f0f0f0;
 }
 .header-top {
@@ -181,7 +181,8 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 14px;
+  margin-top:60px;
+  padding: 20px 14px;
   background: #f1f3f5;
   border-radius: 20px;
   margin-bottom: 16px;
@@ -200,7 +201,7 @@
   display: flex;
   gap: 12px;
   overflow-x: auto;
-  padding: 8px 16px 16px;
+  padding: 8px 20px 16px; /* era 16px */
   scroll-snap-type: x mandatory;
   scrollbar-width: none; /* esconde a scrollbar (Firefox) */
 }
@@ -363,7 +364,7 @@
   display: flex;
   gap: 14px;
   overflow-x: auto;
-  padding: 4px 16px 16px;
+  padding: 4px 20px 16px; /* era 16px */
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
