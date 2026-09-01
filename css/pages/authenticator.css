@@ -115,3 +115,18 @@
   text-decoration: underline;
   color: var(--color-primary);
 }
+
+.login-error {
+  display: none;
+  margin-top: 12px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #fff0f0;
+  color: #d32f2f;
+  font-size: 14px;
+  text-align: center;
+}
+
+.login-error.show {
+  display: block;
+}
